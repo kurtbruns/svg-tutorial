@@ -20,13 +20,13 @@ aside:
 # - Scripting
 ---
 
-This article is an *interactive* tutorial for authoring SVG documents. It introduces the basic syntax, structure and elements of the SVG specification. The tutorial uses the [Vector.js](https://vectorjs.org/) library to make the SVG documents on this page interactive.
+This article is an *interactive* tutorial for authoring SVG documents. It introduces the basic syntax, structure and elements of the SVG specification. The tutorial uses the [Vector.js](https://vectorjs.org/) library to make the SVGs on this page interactive.
 
 ## Introduction
 
-SVG is acronym that stands for scalable vector graphics and is an XML based language for creating vector graphics both as stand-alone and embedded documents. SVG is a popular choice among developers and artists for creating vector based images such as logos, patterns and masking effects.
+SVG is an acronym for "scalable vector graphics". The SVG file type and specification is an XML based language for creating vector graphics both as stand-alone and embedded documents. SVG is a popular choice among developers and artists for creating vector based images such as logos, patterns and masking effects, because the file size is small and the resulting image is crisp.
 
-Elements within an SVG document are defined using XML syntax and make up a tree-like structure called the SVG Document Object Model or SVGDOM for short. For example, the SVG document below draws three circles equally spaced apart. The `svg` tag is the root of the document and defines a drawing area with a width of `200` and a height of `100`. Each circle is described by a circle element which defines its center position and radius.
+Elements within an SVG document are defined using XML syntax and make up a tree-like structure called the SVG Document Object Model or SVGDOM for short. For example, the SVG below draws three circles equally spaced apart. The `svg` tag is the root of the document and defines a drawing area with a width of `200` and a height of `100`. Each circle is described by the tag `circl` which has properties that define the center and radius of the circle.
 
 {{< highlight svg >}}
 <svg width="200" height="100">
@@ -36,7 +36,7 @@ Elements within an SVG document are defined using XML syntax and make up a tree-
 </svg>
 {{< /highlight >}}
 
-This document is rendered as the image shown below.
+This SVG is rendered below.
 
 <svg width="200" height="100" class="example-svg">
   <style>
@@ -53,28 +53,31 @@ This document is rendered as the image shown below.
   <circle cx="150" cy="50" r="15"></circle>
 </svg>
 
-By default, the SVG Coordinate System places the origin in the top-left corner of the drawing area. The positive *x* direction is to the right and the positive *y* direction is **down**. This can be tricky, especially for beginners, however it is common for computer graphics to define the coordinate system with the *y*-direction as down instead of up. 
+By default, the SVG Coordinate System places the origin in the top-left corner of the drawing area. The positive *x* direction is to the right and the positive *y* direction is **down**. This can be tricky, especially for the uninitiated, however this is common in computer graphics to define the coordinate system with the *y*-direction as down instead of up.<!--TODO cite -->
 
 {{<example "SVGCoordinateSystemExample">}}
 
-The SVG above is interactive, click and drag the blue control point above to see how a point is defined in the SVG coordinate system.
+Click and drag the blue control point above to see how a point is defined in the coordinate system.
 
 ## XML Syntax
 
-XML elements are formed by an opening and closing tag. The tagname indicates the element that is being defined. The opening tag contains attributes which describe the properties of the element. For example, in the code snippet below, the `circle` tag defines a SVG Circle Element that has the following attributes `cx="50"`, `cy="50"` and `r="15"` which define the the geometric properties of the circle. In this case, the circle is centered at the position `(50,50)` with a radius of `15`.
+The XML elements that make up the SVG language are formed by an opening and closing tag. The tag name indicates the element that is being defined. The opening tag contains attributes which describe the properties of the element.
+
+For example, in the code snippet below, the `circle` tag defines a circle that is centered at the point `(50,50)` with a radius of `15`. The attributes `cx="50"`, `cy="50"` and `r="15"` define the position and radius.
 
 ```html
 <circle cx="50" cy="50" r="15"></circle>
 ```
 
-In addition to element-specific attributes, there are also global attributes that are defined in the opening tag. For example, the group element shown below is given the id `example-id` and the class `example-class`.
+In addition to element specific attributes, there are also global attributes that can be defined for any element. For example, the group element below is given the id `example-id` and the class `example-class`.
+
 ```html
 <g id="example-id" class="example-class">
   ...
 </g>
 ```
 
-Global attributes are useful for styling, manipulating and querying elements. In general, the `id` identifies a single element and `class` is useful for one or more elements that are similar. Here is a table of common global attributes.
+Global attributes are useful for styling, manipulating and querying elements. In general, the `id` attribute is unique and identifies a single element. The `class` class attribute is commonly applied to one or more elements to style them the same way.
 
 | Gobal Attributes | Description |
 | --- | --- |
@@ -415,7 +418,7 @@ There are two common strategies for embedding SVG docs on the web: using an `img
 <img src="/path/to/file.svg" width="400" height="300">
 ```
 
-The `img` tag is useful for SVG documents that appear in multiple places and leverages browser caching which can be useful if the image appears on many pages that the user navigates to. External stylesheets will not affect the styling of the SVG and Javascript cannot be used to manipulated the document. 
+The `img` tag is useful for SVG documents that appear in multiple places and leverages browser caching which can be useful if the image appears on many pages that the user navigates to. Considurations when using the `img` tag are: external stylesheets will not affect the styling of the SVG and Javascript cannot be used to manipulated the document. 
 
 #### Inline SVG
 
@@ -431,13 +434,16 @@ The **cons** of inlining SVGs is that it can lead to increased `html` size and s
 
 ## References
 
-The SVG specification is an agreed upon standard that is implemented by browsers and applications. The current version of the spec is [SVG 1.1](https://www.w3.org/TR/SVG11/) and the next candidate recomendation is [SVG 2.0](https://www.w3.org/TR/SVG2/). There are many web resources available. Personally, I recommend [Mozilla Web Docs](https://developer.mozilla.org/en-US/) as the best place to look-up SVG documentation and other web documentation.
+The SVG specification is a standard implemented by browsers and applications. The current version of the spec is [SVG 1.1](https://www.w3.org/TR/SVG11/) and the next candidate recomendation is [SVG 2.0](https://www.w3.org/TR/SVG2/). For this reason, the language is interpretted slightly differently between environments and definitely used differently due to its versatility.
 
 - [SVG 1.1 Specification](https://www.w3.org/TR/SVG11/)
 - [SVG 2.0 Specification](https://www.w3.org/TR/SVG2/)
-- [SVG Overview - MDN](https://developer.mozilla.org/en-US/docs/Web/SVG)
-- [SVG Tutorial - MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
-- [SVG Elements - MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element)
+
+There are many web resources available. Personally, I recommend [Mozilla Web Docs](https://developer.mozilla.org/en-US/) as the best place to look-up SVG documentation and other web related documentation.
+
+- [MDN - SVG Overview](https://developer.mozilla.org/en-US/docs/Web/SVG)
+- [MDN - SVG Tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
+- [MDN - SVG Elements](https://developer.mozilla.org/en-US/docs/Web/SVG/Element)
 
 ## Source
 
