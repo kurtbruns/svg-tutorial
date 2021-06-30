@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<h1>{{.Title}}</h1>
+{{ .Content }}
+{{ $hidden := where .Pages ".Params.hidden" true }}
+{{ $shapes := where .Pages ".Params.shape" true }}
+{{ $typography := where .Pages ".Params.typography" true }}
+{{ $structural := where .Pages ".Params.structural" true | complement $hidden }}
+{{ $other := .Pages | complement $shapes $structural $typography $hidden }}
+<div class="flex-row svg-elements">
+  <div class="flex-small one-fourth">
+    <span class="group">Geometric</span>
+    {{ range $shapes }}
+      {{ partial "icon-link" . }}
+    {{ end }}
+  </div>
+  <div class="flex-small one-fourth">
+    <span class="group">Typography</span>
+    <ul>
+      {{ range $typography }}
+        {{ partial "icon-link" . }}
+      {{ end }}
+    </ul>
+  </div>
+  <div class="flex-small one-fourth">
+    <span class="group">Structural</span>
+    <ul>
+      {{ range $structural }}
+        {{ partial "icon-link" . }}
+      {{ end }}
+    </ul>
+  </div>
+  <div class="flex-small one-fourth">
+    <span class="group">Other</span>
+    <ul>
+      {{ range $other }}
+        {{ partial "icon-link" . }}
+      {{ end }}
+    </ul>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .a {
+        fill: #f8f8f8;
+      }
+
+      .b, .c {
+        fill: none;
+        stroke: #404040;
+        stroke-miterlimit: 10;
+      }
+
+      .c {
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="a" x="3" y="2" width="10" height="12" rx="1"/>
+    <rect class="b" x="3" y="2" width="10" height="12" rx="1"/>
+  </g>
+  <line class="c" x1="5" y1="4" x2="11" y2="4"/>
+  <line class="c" x1="5" y1="6" x2="7" y2="6"/>
+  <line class="c" x1="5" y1="8" x2="11" y2="8"/>
+  <line class="c" x1="5" y1="10" x2="11" y2="10"/>
+  <line class="c" x1="4.8761" y1="12" x2="10.8761" y2="12"/>
+</svg>

@@ -1,0 +1,14 @@
+{{- range . -}}
+{{- range $key, $value := . -}}
+{{ partial "aside/li-heading" $key }}
+{{- with $value -}}
+<li>
+	<ul>
+		{{ range . }}
+			{{ partial "aside/li-icon" . }}
+		{{ end }}
+	</ul>
+</li>
+{{- end -}}
+{{- end -}}
+{{- end -}}

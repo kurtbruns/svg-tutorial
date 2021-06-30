@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .a, .g {
+        fill: none;
+      }
+
+      .b {
+        fill: #f8f8f8;
+      }
+
+      .c {
+        fill: #ddd;
+      }
+
+      .d {
+        fill: gray;
+      }
+
+      .e {
+        isolation: isolate;
+      }
+
+      .f {
+        clip-path: url(#a);
+      }
+
+      .g {
+        stroke: #404040;
+        stroke-miterlimit: 10;
+      }
+    </style>
+    <clipPath id="a">
+      <polygon class="a" points="1.933 4.508 7.97 1 14.047 4.509 8.01 8.017 1.933 4.508"/>
+    </clipPath>
+  </defs>
+  <polygon class="b" points="7.97 1 1.953 4.525 8.01 8.017 14.047 4.509 7.97 1"/>
+  <polygon class="c" points="1.953 4.525 1.933 11.508 7.99 15 8.01 8.017 1.953 4.525"/>
+  <polygon class="d" points="7.99 15 8.01 8.017 14.047 4.509 14.067 11.49 7.99 15"/>
+  <g class="e">
+    <g class="f">
+      <polyline class="g" points="14.047 4.509 7.97 1 1.933 4.508 8.01 8.017 14.047 4.509"/>
+    </g>
+  </g>
+  <polygon class="g" points="14.047 4.508 14.067 11.49 7.99 15 1.933 11.508 1.953 4.525 7.97 1 14.047 4.508"/>
+  <polyline class="g" points="1.953 4.525 8.01 8.017 14.047 4.508"/>
+  <line class="g" x1="7.9901" y1="15" x2="8.0104" y2="8.0168"/>
+</svg>

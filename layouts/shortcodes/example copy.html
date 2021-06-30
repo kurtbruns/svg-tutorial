@@ -1,0 +1,17 @@
+
+
+{{ $externals := slice "vector" }}
+{{ $defines := dict "process.env.NODE_ENV" `"production"` }}
+{{ $entry := (print "examples/" (print (.Get 0) ".ts")) }}
+{{ $output := (print "examples/" (print (.Get 0) ".js")) }}
+
+{{- if (fileExists (print "assets/" $entry)) -}}
+{{ $opts := dict "targetPath" $output "defines" $defines "externals" $externals "format" "esm" "minify" false }}
+{{ $built := resources.Get $entry | js.Build $opts  }}
+{{- $id := .Ordinal -}}
+<div id={{$id}}>
+  <script type="module" src="{{ $built.RelPermalink }}"></script>
+</div>
+{{ else }}
+  {{ warnf "Failed to find file %q" $entry }}
+{{ end }}

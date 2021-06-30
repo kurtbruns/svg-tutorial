@@ -1,0 +1,162 @@
+// /*
+//  * Navigation
+//  */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav img {
+  margin-right:0.5rem;
+}
+
+.aside-link {
+  // height:36px;
+}
+
+.svg-elements ul {
+  padding-left: 0;
+}
+
+section.documentation main {
+    padding: 0 1rem;
+}
+
+header {
+  // padding:1.5rem 0px;
+  // background: #f8f8f8;
+  border-bottom:1px solid #dddddd;
+}
+
+section.aside {
+  display: grid;
+  grid-template-columns: auto auto;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.aside aside {
+  display: block;
+  margin-right: 1rem;
+}
+
+@media only screen and (max-width: $large) {
+
+  section.aside {
+    display: block;
+  }
+
+  section.aside aside {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: $medium) {
+  section.aside main {
+    max-width: 100%;
+  }
+}
+
+.aside-item {
+  color: $font-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.aside-item img {
+  vertical-align:middle;
+  margin: 10px;
+}
+
+.aside-link {
+  color: $font-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // padding: 0.25rem 0.5rem ;
+}
+
+
+
+li.group {
+  padding: 0.25rem 0.5rem;
+  // padding: 0.25rem 0;
+}
+
+
+.aside-link.active {
+  color: $primary-color;
+}
+
+.aside-link img {
+  vertical-align:middle;
+  margin: 10px;
+}
+
+.aside-link:hover {
+  background: #f0f0f0;
+  text-decoration: none;
+  color: $font-color;
+}
+
+aside li.active {
+  background: #d2eff9;
+}
+
+.aside .heading {
+  font-weight: 600;
+}
+
+.aside-vanilla .aside-link{
+  height:2rem;
+  padding-left: .5rem;
+}
+
+.aside-link span {
+  // padding-left:0.5rem;
+}
+
+aside h1 {
+  font-size: 1.2rem;
+  padding-left: 0.5rem;
+  margin: 1rem 0;
+}
+
+.aside-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.aside-title h1 {
+  margin:0;
+}
+
+aside li {
+  // padding: .25rem .5rem;
+  // margin: 0 .5rem;
+  display: block;
+}
+
+aside {
+  overscroll-behavior-y: contain;
+  overscroll-behavior: none;
+  float:right;
+  position:sticky;
+  position:-webkit-sticky;
+  top:0;
+  width: 220px;
+  background: #ffffff;
+  z-index: 2;
+}
+
+aside ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+

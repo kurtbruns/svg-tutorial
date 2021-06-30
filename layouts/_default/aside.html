@@ -1,0 +1,24 @@
+{{ define "title" }}{{.Title}}{{ end }}
+{{ define "resources" }}{{ partial "pipes/aside" . }}{{ end }}
+{{ define "body" }}
+<section class="aside">
+  <div class="aside-container">
+    <aside class="aside-vanilla">
+      {{ partial "nav" "SVG Tutorial" }}
+        {{ $title := .Title }}
+        {{- with .Params.Aside -}}
+        <ul>
+          {{ partial "aside/li" $title }}
+          {{ partial "aside/ul" . }}
+        </ul>
+        {{- else -}}
+          {{ warnf "Failed to find aside parameter" }}
+        {{- end -}}
+    </aside>
+  </div>
+  <main class="medium-container" id="main-content">
+    {{ partial "heading" (dict "Level" 1 "Text" .Title) }}
+    {{ .Content }}
+  </main>
+</section>
+{{ end }}

@@ -1,0 +1,4 @@
+{{- $defines := dict "process.env.NODE_ENV" `"development"` -}}
+{{- $opts := dict "targetPath" "js/aside.js" "defines" $defines "format" "esm" "minify" false -}}
+{{- $built := resources.Get "typescript/aside.ts" | js.Build $opts -}}
+<script type="module" src="{{ $built.Permalink }}"></script>

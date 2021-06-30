@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>{{ block "title" . }}{{ .Title }}{{ end }}</title>
+  <meta name="description" content="{{.Description}}" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="{{ (resources.Get `favicons/32x32.png` ).RelPermalink }}" sizes="32x32"/>
+  <link rel="icon" href="{{ (resources.Get `favicons/96x96.png` ).RelPermalink }}" sizes="96x96"/>
+  <link rel="icon" href="{{ (resources.Get `favicons/128x128.png` ).RelPermalink }}" sizes="128x128"/>
+  <link rel="icon" href="{{ (resources.Get `favicons/228x228.png` ).RelPermalink }}" sizes="228x228"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3CZ72MEKN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-H3CZ72MEKN');
+  </script>
+  {{ partial "pipes/examples" . }}
+  {{ partial "pipes/scss" . }}
+  {{ block "resources" . }}{{ end }}
+</head>
+<body>
+{{- block "body" . -}}
+<main class="medium-container main">
+{{- block "main" . -}}
+{{- end -}}
+</main>
+{{- end -}}
+</body>
+</html>

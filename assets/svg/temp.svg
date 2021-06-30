@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 600 300" style="enable-background:new 0 0 600 300;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:none;stroke:#404040;stroke-miterlimit:10;}
+	.st3{fill:#DDDDDD;}
+	.st4{font-family:'ArialMT';}
+	.st5{font-size:50px;}
+	.st6{fill:#404040;}
+	.st7{font-family:'Helvetica-Bold';}
+	.st8{font-size:16px;}
+	.st9{font-family:'Helvetica';}
+	.st10{fill:#4BB77E;}
+	.st11{fill:#485BFC;}
+	.st12{opacity:0.5;fill:none;stroke:#404040;stroke-miterlimit:10;}
+	.st13{opacity:0.3333;fill:#404040;enable-background:new    ;}
+	.st14{opacity:0.8;fill:none;stroke:#485BFC;stroke-miterlimit:10;}
+	.st15{opacity:0.8;fill:none;stroke:#4BB77E;stroke-miterlimit:10;}
+</style>
+<g id="guides" class="st0">
+	<g class="st1">
+		<rect x="489.5" y="97" class="st2" width="120" height="18"/>
+		<rect x="489.5" y="115" class="st2" width="120" height="10"/>
+		<rect x="489.5" y="125" class="st2" width="120" height="18"/>
+		<rect x="489.5" y="143" class="st2" width="120" height="10"/>
+		<rect x="489.5" y="153" class="st2" width="120" height="18"/>
+		<rect x="489.5" y="181" class="st2" width="120" height="18"/>
+		<rect x="489.5" y="171" class="st2" width="120" height="10"/>
+	</g>
+</g>
+<g id="Layer_2">
+	<text transform="matrix(1 0 0 1 198.5474 163.3363)" class="st3 st4 st5">Typeface</text>
+	<g>
+		<text transform="matrix(1 0 0 1 183.4196 253.0312)" class="st6 st7 st8">start</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 497.5365 187.1732)" class="st6 st7 st8">auto</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 497.5365 153.0217)" class="st6 st9 st8">middle</text>
+	</g>
+	<text transform="matrix(1 0 0 1 497.5365 118.8701)" class="st6 st9 st8">mathematical</text>
+	<text transform="matrix(1 0 0 1 497.5363 220.325)" class="st6 st9 st8">ideographic</text>
+	<text transform="matrix(1 0 0 1 497.5366 85.7181)" class="st6 st9 st8">hanging</text>
+	<g>
+		<text transform="matrix(1 0 0 1 276.5386 253.0312)" class="st6 st9 st8">middle</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 388.5511 253.0312)" class="st6 st9 st8">end</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 267.5391 53.0216)" class="st10 st9 st8">text-align</text>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 8 154.9998)" class="st11 st9 st8">dominant-baseline</text>
+	</g>
+	<rect x="150" y="75" class="st12" width="300" height="150"/>
+	<text transform="matrix(1 0 0 1 198.5474 163.3363)" class="st13 st4 st5">Typeface</text>
+</g>
+<g id="Layer_3">
+	<polyline class="st14" points="150,163.3 458,163.3 489.5,183.2 	"/>
+	<polyline class="st14" points="150,179.6 458,179.6 489.5,216.3 	"/>
+	<polyline class="st14" points="150,120.4 458,120.4 489.5,83.7 	"/>
+	<polyline class="st14" points="150,137.4 458,137.4 489.5,116.8 	"/>
+	<polyline class="st14" points="150,150 458,150 489.5,150 	"/>
+	<line class="st15" x1="198.5" y1="75" x2="198.5" y2="233"/>
+	<line class="st15" x1="300" y1="75" x2="300" y2="233"/>
+	<line class="st15" x1="401.5" y1="75" x2="401.5" y2="233"/>
+</g>
+<g id="Layer_1">
+	<circle class="st6" cx="198.5" cy="163.3" r="2.5"/>
+	<g>
+		<g>
+			<path class="st2" d="M191.8,173.3c-30,44.8-59.9,39.1-59.9,39.1"/>
+			<g>
+				<path class="st6" d="M195,168.2c-2.4,1.8-5.9,3.7-8.7,4.5l4.9,1.2l3,4.1C193.9,175.1,194.4,171.2,195,168.2z"/>
+			</g>
+		</g>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 8.0002 216.0286)" class="st6 st7 st8">default position</text>
+	</g>
+</g>
+</svg>

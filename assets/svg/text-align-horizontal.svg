@@ -1,0 +1,39 @@
+<div class="overflow-container border" style="margin-bottom:1rem">
+  <svg class="overflow text-align-horizontal" width="400" height="180" viewbox="-200 0 400 180">
+  <style>
+  /* TODO move */
+  .overflow-container {
+    overflow:hidden;
+    width:100%;
+  }
+  .text-align-horizontal {
+    display:block;
+    margin:auto;
+    overflow:visible;
+  }
+  .text-align-horizontal .dot {
+    fill:#de4850;
+  }
+  .text-align-horizontal line {
+    stroke:#dddddd;
+    stroke-width:1px;
+  }
+  .text-align-horizontal text {
+    font-size: 30px;
+  }
+  </style>
+  <line x1="0" y1="0" x2="0" y2="180"></line>
+
+  <line x1="-360" y1="30" x2="360" y2="30"></line>
+  <line x1="-360" y1="90" x2="360" y2="90"></line>
+  <line x1="-360" y1="150" x2="360" y2="150"></line>
+
+  <circle class="dot" cx="0" cy="30" r="2"></circle>
+  <circle class="dot" cx="0" cy="90" r="2"></circle>
+  <circle class="dot" cx="0" cy="150" r="2"></circle>
+  
+  <text x="0" y="30" style="text-anchor:start">abracadabra</text>
+  <text x="0" y="90" style="text-anchor:middle">abracadabra</text>
+  <text x="0" y="150" style="text-anchor:end">abracadabra</text>
+  </svg>
+</div>

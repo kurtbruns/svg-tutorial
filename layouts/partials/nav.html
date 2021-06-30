@@ -1,0 +1,14 @@
+<a href="/">
+    <button class="muted-button" style="width:100%; margin-top:1rem; padding-left:1rem">
+        <div class="nav">
+            {{- $title := . -}}
+            {{- $pattern := (print "icons/" (print (urlize .) ".svg")) }}
+            {{- with resources.Get $pattern -}}
+            <img src="{{ .RelPermalink }}" alt="{{ . }}" width="16" height="16">
+            <span>{{ $title }}</span>
+            {{- else -}}
+                {{ errorf "Unable to match resources with pattern: %q" $pattern }}
+            {{- end -}}
+        </div>
+    </button>
+</a>

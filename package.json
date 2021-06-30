@@ -1,0 +1,8 @@
+{
+  "name": "svg-tutorial",
+  "version": "1.0.0",
+  "description": "A tutorial and introduction for authoring SVG documents.",
+  "repository": "git@github.com:KurtBruns/svg-tutorial.git",
+  "author": "Kurt Bruns",
+  "license": "MIT"
+}

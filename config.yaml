@@ -1,0 +1,31 @@
+baseURL: "https://kurtbruns.github.io/svg-tutorial/"
+languageCode: "en-us"
+title: "SVG Tutorial"
+googleAnalytics: G-H3CZ72MEKN
+
+enableGitInfo: true
+pygmentsUseClasses: true
+
+disableKinds: ["taxonomy", "taxonomyTerm"]
+
+params:
+  author: "@kurtbruns"
+  authorLink: "https://github.com/kurtbruns"
+  repository: "https://github.com/kurtbruns/svg-tutorial"
+
+# TODO: change back when vector package is released
+module:
+  mounts:
+    # - source: "node_modules/vector/dist/styles"
+    #   target: "static/css/"
+    - source: "assets/typescript/vector/dist/styles"
+      target: "static/css/"
+    - source: "static"
+      target: "static"
+
+# TODO: remove this
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+

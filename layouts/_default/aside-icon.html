@@ -1,0 +1,31 @@
+{{ define "resources" }}{{ partial "pipes/aside" . }}{{ end }}
+{{ define "body" }}
+<section class="aside">
+  <div class="aside-container">
+    <aside class="aside-icon">
+      <div class="aside-title margin-top"><a href="#"><h1>{{.Site.Title}}</h1></a></div>
+      <ul>
+        {{ with .Params.Aside }}
+          {{- range . -}}
+            {{ partial "aside/li-icon" . }}
+          {{- end -}}
+        {{- else -}}
+          {{ warnf "Failed to find aside parameter" }}
+        {{- end -}}
+        {{ partial "aside/li-source" . }}
+      </ul>
+    </aside>
+  </div>
+  <main class="medium-container" id="main-content">
+    <h1>{{.Title}}</h1>
+		<div style="margin-bottom:1rem">
+			<div class="author">Author: <a href={{.Site.Params.AuthorLink}}>{{.Site.Params.Author}}</a></div>
+			<div class="lastMod">Updated: {{ dateFormat "Jan 2, 2006" (index (sort .Site.Pages "Lastmod" "desc") 0).Lastmod }}</div>
+		</div>
+    {{ .Content }}
+    <section class="copyright">
+      <p>&copy; {{ dateFormat "2006" .Page.Lastmod }} Kurt Bruns</p>
+    </section>
+  </main>
+</section>
+{{ end }}

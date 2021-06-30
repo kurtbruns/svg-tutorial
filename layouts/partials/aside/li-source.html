@@ -1,0 +1,11 @@
+<li class="aside-li" data-anchor="{{ urlize `source` }}">
+  <a class="aside-link" href="#source">
+    {{- $pattern := (print "icons/" (print (urlize "source") ".svg")) }}
+    {{- with resources.Get $pattern -}}
+    <img src="{{ .RelPermalink }}" alt="{{ . }}" width="16" height="16">
+    <span>Source</span>
+    {{- else -}}
+        {{ warnf "Unable to match resources with pattern: %q" $pattern }}
+    {{- end -}}
+  </a>
+</li>

@@ -1,0 +1,34 @@
+<div class="aside-container">
+    <aside>
+      <a href="#"><h1 class="heading">{{.Title}}</h1></a>
+      {{- with .Params.Aside -}}
+      <ul>
+        {{ partial "aside/ul.html" . }}
+      </ul>
+      {{- else -}}
+        {{- if .IsSection -}}
+          {{- range $term := $.Site.Data.categories -}}
+          {{- $pages := intersect $.Pages ($.Site.GetPage (print "categories/" (urlize $term))).Pages -}}
+          {{- if (gt (len $pages) 0) -}}
+          <ul>
+            {{ partial "aside/li.html" $term }}
+          </ul>
+          {{- end -}}
+          {{- else -}}
+            {{ errorf "Failed to find data for this content types' aside" }}
+          {{- end -}}
+        {{- else -}}
+          {{- with index $.Site.Data.aside .Section -}}
+        <ul>
+          {{ partial "aside/ul.html" . }}
+        </ul>
+          {{- else -}}
+            {{ errorf "Failed to find data for this content types' aside" }}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+      {{ if (ne true .IsSection ) -}}
+      {{ partial "aside/section-button" . }}
+      {{- end }}
+    </aside>
+  </div>

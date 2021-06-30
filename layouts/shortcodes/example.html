@@ -1,0 +1,7 @@
+{{- $id := (print (print (urlize .Page.Title) "-") .Ordinal) -}}
+<div id="{{$id}}" style="margin-bottom:1.5rem">
+  <script type="module">
+    import Examples from "{{ `js/examples.js` | absURL }}";
+    new Examples["{{ .Get 0 }}"]("{{ $id }}");
+  </script>
+</div>

@@ -1,0 +1,4 @@
+{{- $scss := resources.Get "scss/main.scss" -}}
+{{- $opts := dict "targetPath" "css/main.css" -}}
+{{- $built := $scss | resources.ToCSS $opts -}}
+<link href="{{ $built.Permalink }}" rel="stylesheet" media="screen">

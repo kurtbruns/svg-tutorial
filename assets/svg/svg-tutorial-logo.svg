@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .a {
+        fill: #d6b6e2;
+      }
+
+      .b {
+        fill: #404040;
+      }
+    </style>
+  </defs>
+  <polygon class="a" points="16 27.25 8.5 16 16 4.75 23.5 16 16 27.25"/>
+  <path class="b" d="M16,28.6922,7.5383,16,16,3.3078,24.4617,16ZM9.4609,16,16,25.8078,22.5383,16,16,6.1922Z"/>
+</svg>

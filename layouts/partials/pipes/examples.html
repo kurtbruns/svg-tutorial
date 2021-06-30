@@ -1,0 +1,5 @@
+{{- $defines := dict "process.env.NODE_ENV" `"production"` -}}
+{{- $opts := dict "targetPath" "js/examples.js" "defines" $defines "format" "esm" "minify" true -}}
+{{- $built := resources.Get "typescript/examples/index.ts" | js.Build $opts -}}
+<link rel="modulepreload" href="{{ $built.Permalink }}">
+<link rel="stylesheet" href="{{ `css/vector.css` | absURL }}">

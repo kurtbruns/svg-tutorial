@@ -1,0 +1,5 @@
+{{ if .IsNamedParams }}
+{{ partial "heading" (dict "Level" (.Get "level") "Text" (.Get "text") "Anchor" (.Get "anchor")) }}
+{{ else }}
+{{ partial "heading" (dict "Level" (.Get 0) "Text" (.Get 1) "Anchor" (.Get 2)) }}
+{{ end }}
