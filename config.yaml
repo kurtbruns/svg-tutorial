@@ -1,7 +1,6 @@
 baseURL: "https://kurtbruns.github.io/svg-tutorial/"
 languageCode: "en-us"
 title: "SVG Tutorial"
-googleAnalytics: G-H3CZ72MEKN
 
 enableGitInfo: true
 pygmentsUseClasses: true
@@ -28,4 +27,3 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-

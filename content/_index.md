@@ -213,14 +213,14 @@ The origin of the svg coordinate system is at the top-left corner of the image. 
 The view box attribute allows the user to define the internal coordinate system used for drawing. This is useful for two reasons. 1) It allows for the creation of responsive images that leverage the power of SVG. 2) The viewbox can be used to programmatically make sure that all elements are displayed for the user. <!-- TODO: link -->
 
 ```
-TODO: example
+TODO: viewbox example with preserve aspect ratio dropdown
 ```
 
 **Note**, as demonstrated in the interactive if the view port dimensions disagrees with the viewbox, the default strategy is to ... This can be changed using the `preserveAspectRatio` attribute
 
 ## Styling
 
-SVG elements are styled using [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) which stands for Cascading Style Sheets. Styling can be applied to individual elements as inline style or using a user-define style sheet. There are many presentation attributes that can be styles, but the two most common are the `fill` and `stroke` of a geometric element.
+SVG elements are styled using Cascading Style Sheets or CSS for short. Styling can be applied to individual elements as inline style or using a user-define style sheet. There are many presentation attributes that can be styles, but the two most common are the `fill` and `stroke` of a geometric element.
 
 ### Inline Style
 
@@ -299,7 +299,7 @@ circle {
   <circle class="green" cx="200" cy="75" r="25"></circle>
 </svg>
 
-See the mozilla reference [CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for a comprehensive understanding of selectors.
+See [MDN CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors) for more information.
 
 ## Typography
 

@@ -9,13 +9,7 @@
   <link rel="icon" href="{{ (resources.Get `favicons/96x96.png` ).RelPermalink }}" sizes="96x96"/>
   <link rel="icon" href="{{ (resources.Get `favicons/128x128.png` ).RelPermalink }}" sizes="128x128"/>
   <link rel="icon" href="{{ (resources.Get `favicons/228x228.png` ).RelPermalink }}" sizes="228x228"/>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3CZ72MEKN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-H3CZ72MEKN');
-  </script>
+  {{ partial "analytics" . }}
   {{ partial "pipes/examples" . }}
   {{ partial "pipes/scss" . }}
   {{ block "resources" . }}{{ end }}
