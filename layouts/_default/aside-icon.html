@@ -18,10 +18,10 @@
   </div>
   <main class="medium-container" id="main-content">
     <h1>{{.Title}}</h1>
-		<div style="margin-bottom:1rem">
-			<div class="author">Author: <a href={{.Site.Params.AuthorLink}}>{{.Site.Params.Author}}</a></div>
-			<div class="lastMod">Updated: {{ dateFormat "Jan 2, 2006" (index (sort .Site.Pages "Lastmod" "desc") 0).Lastmod }}</div>
-		</div>
+    <div style="margin-bottom:1rem">
+      <div class="author">Author: <a href={{.Site.Params.AuthorLink}}>{{.Site.Params.Author}}</a></div>
+      <div class="lastMod">Updated: {{ .Lastmod.Format "Jan 2, 2006"}}</div>
+    </div>
     {{ .Content }}
     <section class="copyright">
       <p>&copy; {{ dateFormat "2006" .Page.Lastmod }} Kurt Bruns</p>

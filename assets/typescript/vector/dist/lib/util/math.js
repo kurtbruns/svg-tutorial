@@ -49,6 +49,12 @@ export class Math2 {
         return n - (n % radix);
     }
     /**
+    * Returns the ceiling with a radix
+    */
+    static ceil(n, radix) {
+        return n + (radix - (n % radix));
+    }
+    /**
     * Returns the point where two lines intersect. The first line is defined by the
     * points p1 and p2. The second line is defined by the points p3 and p4.
     */

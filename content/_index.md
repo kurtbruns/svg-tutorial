@@ -246,9 +246,20 @@ There are many different values that are accepted for color. The colors are show
 
 ### Styesheets
 
-The alternative to inline styling are stylesheets which are more powerful. Stylesheet contain selectors which style elements based on their type, class and other attributes. Selectors have priority and can contain complex logic for selecting specific elements.
+The alternative to inline styling is stylesheets. Stylesheets can either be defined in the SVG `style` element or as an external stylesheet. Stylesheets contain logic selectors which style elements based on their type, class and other attributes. Selectors have priority and can contain complex logic for selecting specific elements.
 
 ```css
+/* style elements by tag name */
+circle {
+  stroke:#dddddd; /* light grey */
+  stroke-width: 4px;
+}
+
+/* style by user interaction */
+circle:hover {
+  stroke:#888888; /* medium grey */
+}
+
 /* style elements by class */
 .red {
   fill: #de4850;
@@ -259,12 +270,6 @@ The alternative to inline styling are stylesheets which are more powerful. Style
 .green {
   fill: #68c541;
 }
-
-/* style elements by type */
-circle {
-  stroke:#dddddd;
-  stroke-width: 4px;
-}
 ```
 
 ```xml
@@ -273,11 +278,16 @@ circle {
 <circle class="green" cx="200" cy="75" r="25"></circle>
 ```
 
+These style rules applied to the SVG elements above produce the following graphic.
+
 <svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:150px; margin-bottom:1rem" class="border" id="style-example">
 <style>
 #style-example circle {
   stroke:#dddddd;
   stroke-width: 3px;
+}
+#style-example circle:hover {
+  stroke:#888888;
 }
 #style-example .red {
   fill: #de4850;

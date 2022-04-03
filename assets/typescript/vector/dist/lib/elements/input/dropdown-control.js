@@ -40,10 +40,7 @@ export class DropdownControl extends Input {
         dropdownButton.root.classList.add('dropdown-control-button');
         let buttonBox = new Rectangle(this.textWidth * 3 + 16, -16, 32, 32);
         let radius = 8;
-        let downArrow = new Path(` M ${radius + this.textWidth * 3 + 32} ${radius * Math.sin(-2 * Math.PI / 3) + 1}
-                                 L ${radius * Math.cos(-2 * Math.PI / 3) + this.textWidth * 3 + 28} ${radius * Math.sin(-2 * Math.PI / 3) + 1}
-                                 L ${(radius + this.textWidth * 3 + 32 + radius * Math.cos(-2 * Math.PI / 3) + this.textWidth * 3 + 28) / 2} ${radius * Math.sin(-4 * Math.PI / 3) + 1}
-                                 Z`);
+        let downArrow = new Path(` M ${radius + this.textWidth * 3 + 32} ${radius * Math.sin(-2 * Math.PI / 3) + 1} L ${radius * Math.cos(-2 * Math.PI / 3) + this.textWidth * 3 + 28} ${radius * Math.sin(-2 * Math.PI / 3) + 1} L ${(radius + this.textWidth * 3 + 32 + radius * Math.cos(-2 * Math.PI / 3) + this.textWidth * 3 + 28) / 2} ${radius * Math.sin(-4 * Math.PI / 3) + 1} Z`);
         downArrow.style.fill = '#333333';
         dropdownButton.appendChild(buttonBox);
         dropdownButton.appendChild(downArrow);

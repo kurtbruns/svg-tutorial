@@ -19,7 +19,8 @@ interface Configuration {
     title?: string;
     grid?: boolean;
     border?: boolean;
-    f: FunctionType;
+    tic?: number;
+    f?: FunctionType;
 }
 /**
  * A plot visualizes one or more one-to-one functinos.

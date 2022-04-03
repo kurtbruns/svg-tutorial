@@ -91,6 +91,12 @@ export class GridArtboard extends ResponsiveArtboard {
         point.y -= bbox.top;
         return point;
     }
+    drawBackground(fill = '#ffffff') {
+        let viewbox = this.root.viewBox.baseVal;
+        let background = this.prependChild(this.rectangle(viewbox.x, viewbox.y, viewbox.width, viewbox.height));
+        background.style.fill = fill;
+        background.style.stroke = 'none';
+    }
     /**
      * Draws a border around the plot SVG that does not change the dimensions of the plot object.
      */
@@ -103,104 +109,51 @@ export class GridArtboard extends ResponsiveArtboard {
         this.border.root.setAttribute('vector-effect', 'non-scaling-stroke');
         this.border.style.strokeWidth = '2';
     }
+    /**
+     * Draws grid lines
+     */
     drawGridLines() {
         let viewBox = this.internalViewBox.baseVal;
         let group3 = this.gridGroup.group();
-        group3.style.stroke = '#f8f8f8';
         let group2 = this.gridGroup.group();
-        group2.style.stroke = '#f0f0f0';
         let group1 = this.gridGroup.group();
-        group1.style.stroke = '#dddddd';
+        // group3.style.opacity = '0.08'
+        // group2.style.opacity = '0.16'
+        // group1.style.opacity = '0.24'
+        group3.style.opacity = '0.15';
+        group2.style.opacity = '0.25';
+        group1.style.opacity = '0.4';
+        // group3.style.stroke = '#f8f8f8'
+        // group2.style.stroke = '#f0f0f0'
+        // group1.style.stroke = '#dddddd'
         let x1 = Math.floor(viewBox.x);
         let y1 = Math.floor(viewBox.y);
         let x2 = Math.ceil(viewBox.x + viewBox.width);
         let y2 = Math.ceil(viewBox.y + viewBox.height);
-        for (let x = x1; x <= x2; x++) {
-            if (x % 10 === 0) {
+        let major = 10;
+        let minor = 5;
+        let tic = 1;
+        for (let x = x1; x <= x2; x += tic) {
+            if (x % major === 0) {
                 group1.line(x, y1, x, y2);
             }
-            else if (x % 5 === 0) {
+            else if (x % minor === 0) {
                 group2.line(x, y1, x, y2);
             }
             else {
                 group3.line(x, y1, x, y2);
             }
         }
-        for (let y = y1; y <= y2; y++) {
-            if (y % 10 === 0) {
+        for (let y = y1; y <= y2; y += tic) {
+            if (y % major === 0) {
                 group1.line(x1, y, x2, y);
             }
-            else if (y % 5 === 0) {
+            else if (y % minor === 0) {
                 group2.line(x1, y, x2, y);
             }
             else {
                 group3.line(x1, y, x2, y);
             }
         }
-        // let startY = Math.ceil(p1.y*10);
-        // let endY = Math.ceil(p2.y*10);
-        // for( let i = startY; i < endY; i+= 10) {
-        // 	let y = i/10;
-        // 	if( i % 10 === 0 ) {
-        // 		group1.line(p1.x, y, p2.x, y);
-        // 	} else if( i % 5 === 0) {
-        // 		group2.line(p1.x, y, p2.x, y);
-        // 	} else {
-        // 		group3.line(p1.x, y, p2.x, y);
-        // 	}
-        // }
-    }
-    drawGridLinesTest(step1, step2, step3) {
-        let viewBox = this.internalViewBox.baseVal;
-        let group3 = this.gridGroup.group();
-        group3.style.stroke = '#f8f8f8';
-        let group2 = this.gridGroup.group();
-        group2.style.stroke = '#f0f0f0';
-        let group1 = this.gridGroup.group();
-        group1.style.stroke = '#dddddd';
-        let x1 = Math.floor(viewBox.x);
-        let y1 = Math.floor(viewBox.y);
-        let x2 = Math.floor(viewBox.x + viewBox.width);
-        let y2 = Math.floor(viewBox.y + viewBox.height);
-        // let step1 = 100; // full magnitude step up
-        // let step2 = 50;  // half magnitude
-        // let step3 = 10;  // full magnitude step down
-        // Make sure to start on the smallest step down
-        x1 = x1 - (x1 % step3) - step3;
-        y1 = y1 - (y1 % step3) - step3;
-        for (let x = x1; x <= x2; x += step3) {
-            if (x % step1 === 0) {
-                group1.line(x, y1, x, y2);
-            }
-            else if (x % step2 === 0) {
-                group2.line(x, y1, x, y2);
-            }
-            else {
-                group3.line(x, y1, x, y2);
-            }
-        }
-        for (let y = y1; y <= y2; y += step3) {
-            if (y % step1 === 0) {
-                group1.line(x1, y, x2, y);
-            }
-            else if (y % step2 === 0) {
-                group2.line(x1, y, x2, y);
-            }
-            else {
-                group3.line(x1, y, x2, y);
-            }
-        }
-        // let startY = Math.ceil(p1.y*10);
-        // let endY = Math.ceil(p2.y*10);
-        // for( let i = startY; i < endY; i+= 10) {
-        // 	let y = i/10;
-        // 	if( i % 10 === 0 ) {
-        // 		group1.line(p1.x, y, p2.x, y);
-        // 	} else if( i % 5 === 0) {
-        // 		group2.line(p1.x, y, p2.x, y);
-        // 	} else {
-        // 		group3.line(p1.x, y, p2.x, y);
-        // 	}
-        // }
     }
 }

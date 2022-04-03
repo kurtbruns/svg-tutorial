@@ -64,10 +64,13 @@ export declare class GridArtboard extends ResponsiveArtboard {
      * Converts a point in the screen's coordinate system to the SVG's coordinate system.
      */
     SVGToRelative(svgX: number, svgY: number): DOMPoint;
+    drawBackground(fill?: string): void;
     /**
      * Draws a border around the plot SVG that does not change the dimensions of the plot object.
      */
     drawBorder(): void;
+    /**
+     * Draws grid lines
+     */
     drawGridLines(): void;
-    drawGridLinesTest(step1: any, step2: any, step3: any): void;
 }

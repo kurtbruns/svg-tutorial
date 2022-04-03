@@ -14,15 +14,20 @@ export class Plot extends GridArtboard {
         if (config.grid) {
             this.drawGridLines();
         }
-        this.fnGroup = this.group();
+        this.fnGroup = this.foreground.group();
+        this.fnGroup.classList.add('test');
         this.functionPaths = [];
         this.functions = [];
         this.setAttribute('preserveAspectRatio', 'none');
-        this.addFunction(config.f);
-        this.draw();
+        if (config.f) {
+            this.addFunction(config.f);
+            this.draw();
+        }
     }
     addFunction(f) {
         let path = this.fnGroup.path('');
+        path.style.stroke = '#404040';
+        path.style.strokeWidth = '1.5px';
         path.classList.add('non-scaling-stroke');
         this.functions.push(f);
         this.functionPaths.push(path);

@@ -29,10 +29,7 @@ export class Scrubber extends Slider {
         playCircle.style.strokeWidth = '1px';
         playCircle.classList.add('animation-button');
         let radius = 6;
-        let playTriangle = this.path(` M ${radius} ${0}
-                                  L ${radius * Math.cos(-2 * Math.PI / 3)} ${radius * Math.sin(-2 * Math.PI / 3)}
-                                  L ${radius * Math.cos(-4 * Math.PI / 3)} ${radius * Math.sin(-4 * Math.PI / 3)}
-                                  Z`);
+        let playTriangle = this.path(` M ${radius} ${0} L ${radius * Math.cos(-2 * Math.PI / 3)} ${radius * Math.sin(-2 * Math.PI / 3)} L ${radius * Math.cos(-4 * Math.PI / 3)} ${radius * Math.sin(-4 * Math.PI / 3)} Z`);
         playTriangle.style.fill = '#333333';
         this.playButton = this.group();
         this.playButton.appendChild(playCircle);
@@ -45,10 +42,7 @@ export class Scrubber extends Slider {
         pauseCircle.style.strokeWidth = '1px';
         // TODO: style the lines with rounded end points
         let size = 6;
-        let pauseLines = this.path(` M ${-size / 2} ${-4}
-                                L ${-size / 2} ${4}
-                                M ${size / 2} ${-4}
-                                L ${size / 2} ${4}`);
+        let pauseLines = this.path(`M ${-size / 2} ${-4} L ${-size / 2} ${4} M ${size / 2} ${-4} L ${size / 2} ${4}`);
         pauseLines.style.stroke = '#333333';
         pauseLines.style.strokeWidth = '2';
         pauseLines.style.strokeLinecap = 'round';

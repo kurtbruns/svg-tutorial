@@ -24,6 +24,10 @@ export declare class Math2 {
     */
     static floor(n: number, radix: number): number;
     /**
+    * Returns the ceiling with a radix
+    */
+    static ceil(n: number, radix: number): number;
+    /**
     * Returns the point where two lines intersect. The first line is defined by the
     * points p1 and p2. The second line is defined by the points p3 and p4.
     */
