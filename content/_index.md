@@ -373,6 +373,7 @@ The position where the text is drawn within the coordinate system is determined 
 {{<image
 src="images/text-position.svg"
 alt="SVG Text Position"
+class="center"
 >}}
 
 ## Advanced Elements
