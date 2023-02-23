@@ -24,7 +24,7 @@
     </div>
     {{ .Content }}
     <section class="copyright">
-      <p>&copy; {{ dateFormat "2006" .Page.Lastmod }} Kurt Bruns</p>
+      <p>&copy; {{ now.Format "2006" }} Kurt Bruns</p>
     </section>
   </main>
 </section>

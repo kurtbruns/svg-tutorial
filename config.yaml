@@ -9,7 +9,7 @@ disableKinds: ["taxonomy", "taxonomyTerm"]
 
 params:
   author: "Kurt Bruns"
-  authorLink: "https://kurtbruns.github.io/"
+  authorLink: "https://kurtbruns.com"
   repository: "https://github.com/kurtbruns/svg-tutorial"
 
 # TODO: change back when vector package is released
