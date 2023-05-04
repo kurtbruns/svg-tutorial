@@ -8,7 +8,7 @@
 
 import { SVGExample } from "./svg-example";
 
-export default class SVGEllipseExample extends SVGExample {
+export class SVGEllipseExample extends SVGExample {
 
   constructor(idOrElement) {
 

@@ -5,7 +5,7 @@
 */
 import { SVGExample } from "./svg-example";
 
-export default class SVGCircleExample extends SVGExample {
+export class SVGCircleExample extends SVGExample {
 	
 	constructor(idOrElement) {
 		super(idOrElement);

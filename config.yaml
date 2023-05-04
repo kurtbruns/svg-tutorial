@@ -15,9 +15,7 @@ params:
 # TODO: change back when vector package is released
 module:
   mounts:
-    # - source: "node_modules/vector/dist/styles"
-    #   target: "static/css/"
-    - source: "assets/typescript/vector/dist/styles"
+    - source: "node_modules/@kurtbruns/vector/dist/styles"
       target: "static/css/"
     - source: "static"
       target: "static"

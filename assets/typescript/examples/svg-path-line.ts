@@ -7,9 +7,9 @@
 */
 
 import { SVGExample } from './svg-example';
-import { PancakeLayout } from '../vector/dist/lib/index';
+import { PancakeLayout } from '@kurtbruns/vector';
 
-export default class SVGPathLineCommand extends SVGExample {
+export class SVGPathLineExample extends SVGExample {
   constructor(idOrElement) {
 
     let template = new PancakeLayout(idOrElement);

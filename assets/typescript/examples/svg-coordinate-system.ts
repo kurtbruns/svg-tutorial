@@ -6,13 +6,13 @@
 * @tags [svg]
 */
 
-import { Control, Text } from '../vector/dist/lib/index';
+import { Control, Text } from '@kurtbruns/vector';
 import { SVGExample } from './svg-example';
 
 /**
  * 
  */
-export default class SVGCoordinateSystem extends SVGExample {
+export class SVGCoordinateSystemExample extends SVGExample {
 	
 	/**
 	 * 

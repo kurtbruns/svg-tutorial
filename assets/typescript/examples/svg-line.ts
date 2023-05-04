@@ -8,7 +8,7 @@
 
 import { SVGExample } from "./svg-example";
 
-export default class SVGLineExample extends SVGExample {
+export class SVGLineExample extends SVGExample {
 	constructor(idOrElement) {
 		super(idOrElement);
 		let interactive = this;

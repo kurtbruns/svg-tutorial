@@ -1,6 +1,6 @@
-import MetaSVGSyntax from "./meta-svg-syntax";
+import { MetaSVGSyntaxExample } from "./meta-svg-syntax";
 
-export default class MetaSVGStructure extends MetaSVGSyntax {
+export class MetaSVGStructureExample extends MetaSVGSyntaxExample {
 	constructor(element) {
 		super(element, true);
 	}

@@ -2,19 +2,21 @@ import "./style.css";
 import "vector/style/vector.css";
 import "vector/style/templates.css";
 
-import MetaSVGStructure from "./meta-svg-structure";
-import MetaSVGSyntax from "./meta-svg-syntax";
-import SVGCircleExample from "./svg-circle";
-import SVGCoordinateSystemExample from "./svg-coordinate-system";
-import SVGEllipseExample from "./svg-ellipse";
-import SVGLineExample from "./svg-line";
-import SVGPathArcExample from "./svg-path-arc";
-import SVGPathBezierQuadraticExample from "./svg-path-bezier-quadratic";
-import SVGPathBezierCubic from "./svg-path-bezier-cubic";
-import SVGPathLineExample from "./svg-path-line";
-import SVGRectangleExample from "./svg-rectangle";
-import SVGViewPortExample from "./svg-view-port";
-import SVGAspectRatioExample from "./svg-aspect-ratio";
+import "@kurtbruns/vector/src/assets/styles/templates"
+
+import {MetaSVGStructureExample} from "./meta-svg-structure";
+import {MetaSVGSyntaxExample} from "./meta-svg-syntax";
+import {SVGCircleExample} from "./svg-circle";
+import {SVGCoordinateSystemExample} from "./svg-coordinate-system";
+import {SVGEllipseExample} from "./svg-ellipse";
+import {SVGLineExample} from "./svg-line";
+import {SVGPathArcExample} from "./svg-path-arc";
+import {SVGPathBezierQuadraticExample} from "./svg-path-bezier-quadratic";
+import {SVGPathBezierCubicExample} from "./svg-path-bezier-cubic";
+import {SVGPathLineExample} from "./svg-path-line";
+import {SVGRectangleExample} from "./svg-rectangle";
+import {SVGViewPortExample} from "./svg-view-port";
+import {SVGAspectRatioExample} from "./svg-aspect-ratio";
 
 let body = document.getElementsByTagName("body")[0];
 
@@ -150,15 +152,15 @@ function createContainer( element:HTMLElement ) : HTMLDivElement {
 	// "svg-view-port-16:9-small" : new SVGViewPortExample(createContainer(body), 288*1, 144*1, 'xMidYMid meet'),
 
 	// "svg-aspect-ratio-1:1" : new SVGViewPortExample2(createContainer(body), 280, 280, 'xMidYMid meet'),
-	"meta-svg-structure" : new MetaSVGStructure(createContainer(body)),
-	"meta-svg-syntax" : new MetaSVGSyntax(createContainer(body), false),
+	"meta-svg-structure" : new MetaSVGStructureExample(createContainer(body)),
+	"meta-svg-syntax" : new MetaSVGSyntaxExample(createContainer(body), false),
 	"svg-circle" : new SVGCircleExample(createContainer(body)),
 	"svg-ellipse" : new SVGEllipseExample(createContainer(body)),
 	"svg-line" : new SVGLineExample(createContainer(body)),
 	"svg-rectangle" : new SVGRectangleExample(createContainer(body)),
 	"svg-path-bezier-line" : new SVGPathLineExample(createContainer(body)),
 	"svg-path-bezier-quadratic" : new SVGPathBezierQuadraticExample(createContainer(body)),
-	"svg-path-bezier-cubic" : new SVGPathBezierCubic(createContainer(body)),
+	"svg-path-bezier-cubic" : new SVGPathBezierCubicExample(createContainer(body)),
 	// "svg-path-bezier-arc" : new SVGPathArcExample(createContainer(body)),
 
 };

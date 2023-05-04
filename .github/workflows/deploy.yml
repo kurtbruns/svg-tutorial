@@ -14,9 +14,13 @@ jobs:
         with:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
-      # - uses: borales/actions-yarn@v2.3.0
-      #   with:
-      #     cmd: install # run `yarn install` command
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2

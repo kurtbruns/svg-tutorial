@@ -1,11 +1,11 @@
 
 
-import { ResponsiveArtboard, Text, TSpan, Group } from '../vector/dist/lib/index';
+import { ResponsiveArtboard, Text, TSpan, Group } from '@kurtbruns/vector';
 
 /**
  * 
  */
-export default class MetaSVGSyntax {
+export class MetaSVGSyntaxExample {
 	
 	colors = {
 		'tag':'#404040',

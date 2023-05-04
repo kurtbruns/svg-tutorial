@@ -8,7 +8,7 @@
 
 import { SVGExample } from "./svg-example";
 
-export default class SVGPathBezierQuadratic extends SVGExample {
+export class SVGPathBezierQuadraticExample extends SVGExample {
   constructor(idOrElement) {
 
     super(idOrElement);

@@ -7,9 +7,9 @@
 */
 
 import { SVGExample } from './svg-example';
-import { OverflowArtboard, PancakeLayout } from '../vector/dist/lib/index';
+import { OverflowArtboard, PancakeLayout } from '@kurtbruns/vector';
 
-export default class SVGPathCloseCommand extends OverflowArtboard {
+export class SVGClipPathExample extends OverflowArtboard {
   constructor(idOrElement) {
 
     super(idOrElement, {
@@ -41,7 +41,7 @@ export default class SVGPathCloseCommand extends OverflowArtboard {
     path.addDependency(c1, c2, c3, c4);
 
     
-    image.setAttribute('clip-path', `url(#${clipPath.id})`);
+    (image as any).setAttribute('clip-path', `url(#${clipPath.id})`);
 
   }
 }

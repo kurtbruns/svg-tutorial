@@ -8,7 +8,7 @@
 
 import { SVGExample } from "./svg-example";
 
-export default class SVGPathBezierCubicExample extends SVGExample {
+export class SVGPathBezierCubicExample extends SVGExample {
   constructor(idOrElement) {
     super(idOrElement);
     let interactive = this;

@@ -26,7 +26,7 @@ This article is an *interactive* tutorial for authoring SVG documents. It introd
 
 SVG is an acronym for "scalable vector graphics". The SVG file type and specification is an XML based language for creating vector graphics both as stand-alone and embedded documents. SVG is a popular choice among developers and artists for creating vector based images such as logos, patterns and masking effects, because the file size is small and the resulting image is crisp.
 
-Elements within an SVG document are defined using XML syntax and make up a tree-like structure called the SVG Document Object Model or SVGDOM for short. For example, the SVG below draws three circles equally spaced apart. The `svg` tag is the root of the document and defines a drawing area with a width of `200` and a height of `100`. Each circle is described by the tag `circl` which has properties that define the center and radius of the circle.
+Elements within an SVG document are defined using XML syntax and make up a tree-like structure called the SVG Document Object Model or SVGDOM for short. For example, the SVG below draws three equally spaced circles. The `svg` tag is the root of the document and defines a drawing area with a width of `200` and a height of `100`. Each circle is described by the tag `circle` which has properties that define the center and radius of the circle.
 
 {{< highlight svg >}}
 <svg width="200" height="100">
@@ -77,7 +77,7 @@ In addition to element specific attributes, there are also global attributes tha
 </g>
 ```
 
-Global attributes are useful for styling, manipulating and querying elements. In general, the `id` attribute is unique and identifies a single element. The `class` class attribute is commonly applied to one or more elements to style them the same way.
+Global attributes are useful for styling, manipulating and querying elements. In general, the `id` attribute is unique and identifies a single element. The class attribute is commonly applied to one or more elements to style them the same way.
 
 | Gobal Attributes | Description |
 | --- | --- |
@@ -99,13 +99,13 @@ The line element draws a line between two points `(x1, y1)` and `(x2, y2)`. The 
 
 {{<example "SVGEllipseExample">}}
 
-The ellipse element draws an ellipse centered at the point `(cx, cy)` with the horizontal radius `rx` and the vertical radius `ry`. The ellipse's path can by styled with the CSS `stroke` and `stroke-width` attributes which control the color and width. The ellipse's fill can be styled with the CSS `fill` attribute
+The ellipse element draws an ellipse centered at the point `(cx, cy)` with the horizontal radius `rx` and the vertical radius `ry`. The ellipse's path can be styled with the CSS `stroke` and `stroke-width` attributes which control the color and width. The ellipse's fill can be styled with the CSS `fill` attribute
 
 ### Rectangle Element
 
 {{<example "SVGRectangleExample">}}
 
-The rectangle element draws a rectangle whose top left corner is defined the point `(x,y)` with the dimensions `width` and `height`. If a negative width or height value is supplied, the element is not rendered. The rectangles's path can by styled with the CSS `stroke` and `stroke-width` attributes which control the color and width. The rectangles's fill can be styled with the CSS `fill` attribute
+The rectangle element draws a rectangle whose top left corner is defined the point `(x,y)` with the dimensions `width` and `height`. If a negative width or height value is supplied, the element is not rendered. The rectangle's path can be styled with the CSS `stroke` and `stroke-width` attributes which control the color and width. The rectangle's fill can be styled with the CSS `fill` attribute.
 
 ### Path Element
 
@@ -132,7 +132,7 @@ Commands are defined to use absolute or relative coordinates. A command defined 
 <path d="M x y L x1 y1"></path>
 ```
 
-Most paths start with a "Move To" command which defines where the path starts in the coordinate system. In the example shown below the command `M x y` starts drawing the path at the point `(x,y)`. Without the move to command the default starting point is `(0,0)`. Then because the move to command is followed by the letter `L` a line is drawn to the point described by the line command. See the example below.
+Most paths start with a "Move To" command which defines where the path starts in the coordinate system. In the example shown below the command `M x y` starts drawing the path at the point `(x,y)`. Without the move to command the default starting point is `(0,0)`. Then, because the move-to command is followed by the letter `L`, a line is drawn to the point described by the line command. See the example below.
 
 {{<example "SVGPathLineExample">}}
 
@@ -142,7 +142,7 @@ Most paths start with a "Move To" command which defines where the path starts in
 <path d="Q x1 y1 x2 y2"></path>
 ```
 
-The SVG specification offers a couple variations of the bezier curves. The quadratic bezier curve command, shown below, draws a quadratic bezier curve using the previous position of the path and the two points defined within the command.
+The SVG specification offers a couple of variations of the bezier curves. The quadratic bezier curve command, shown below, draws a quadratic bezier curve using the previous position of the path and the two points defined within the command.
 
 {{<example "SVGPathBezierQuadraticExample">}}
 
@@ -166,7 +166,7 @@ The arc command draws an arc between two points using the curve of an ellipse de
 
 {{<example "SVGPathArcExample">}}
 
-Note, because of the math involved for solving for an ellipse between two points, there is two solutions which leads to two possible ellipsis.
+Note that, due to the math involved in solving for an ellipse between two points, there are two solutions, leading to two possible ellipses.
 
 #### Path Close Command
 

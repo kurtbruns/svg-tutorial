@@ -1,4 +1,4 @@
-import { OverflowArtboard, Text } from '../vector/dist/lib/index';
+import { OverflowArtboard, Text } from '@kurtbruns/vector';
 
 export class SVGExample extends OverflowArtboard {
 

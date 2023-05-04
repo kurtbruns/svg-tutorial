@@ -3,10 +3,10 @@
 * @description This interactive demonstrates the basic properties of the SVG Circle Element.
 * @tags [svg]
 */
-import { SVG, Rectangle, ResponsiveArtboard } from '../vector/dist/lib/index';
-import ResizeObserver from 'resize-observer-polyfill';
+import { SVG, Rectangle, ResponsiveArtboard } from '@kurtbruns/vector';
+// import ResizeObserver from 'resize-observer-polyfill';
 
-export default class SVGViewPortExample {
+export class SVGViewPortExample {
 
 	minWidth = 288;
 

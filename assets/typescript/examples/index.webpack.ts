@@ -4,15 +4,15 @@ import "vector/style/templates.css";
 
 // import MetaSVGStructure from "./meta-svg-structure";
 // import MetaSVGSyntax from "./meta-svg-syntax";
-import SVGCircleExample from "./svg-circle";
-import SVGCoordinateSystemExample from "./svg-coordinate-system";
-import SVGEllipseExample from "./svg-ellipse";
-import SVGLineExample from "./svg-line";
+import { SVGCircleExample } from "./svg-circle";
+import { SVGCoordinateSystemExample } from "./svg-coordinate-system";
+import { SVGEllipseExample } from "./svg-ellipse";
+import { SVGLineExample } from "./svg-line";
 // import SVGPathArcExample from "./svg-path-arc";
-import SVGPathBezierQuadraticExample from "./svg-path-bezier-quadratic";
-import SVGPathBezierCubic from "./svg-path-bezier-cubic";
-import SVGPathLineExample from "./svg-path-line";
-import SVGRectangleExample from "./svg-rectangle";
+import { SVGPathBezierQuadraticExample } from "./svg-path-bezier-quadratic";
+import { SVGPathBezierCubicExample } from "./svg-path-bezier-cubic";
+import { SVGPathLineExample } from "./svg-path-line";
+import { SVGRectangleExample } from "./svg-rectangle";
 // import SVGViewPortExample from "./svg-view-port";
 // import SVGAspectRatioExample from "./svg-aspect-ratio";
 
@@ -44,7 +44,7 @@ let body = document.getElementsByTagName("body")[0];
 
 // 	return parent;
 // }
-function createContainer( element:HTMLElement ) : HTMLDivElement {
+function createContainer(element: HTMLElement): HTMLDivElement {
 	let container = element.appendChild(document.createElement('div'));
 	container.classList.add('simple-container');
 	return container;
@@ -54,14 +54,14 @@ function createContainer( element:HTMLElement ) : HTMLDivElement {
 
 	// "meta-svg-structure" : new MetaSVGStructure(createContainer(body)),
 	// "meta-svg-syntax" : new MetaSVGSyntax(createContainer(body), false),
-	"svg-coordinate-system" : new SVGCoordinateSystemExample(createContainer(body)),
-	"svg-circle" : new SVGCircleExample(createContainer(body)),
-	"svg-ellipse" : new SVGEllipseExample(createContainer(body)),
-	"svg-line" : new SVGLineExample(createContainer(body)),
-	"svg-rectangle" : new SVGRectangleExample(createContainer(body)),
-	"svg-path-bezier-line" : new SVGPathLineExample(createContainer(body)),
-	"svg-path-bezier-quadratic" : new SVGPathBezierQuadraticExample(createContainer(body)),
-	"svg-path-bezier-cubic" : new SVGPathBezierCubic(createContainer(body)),
+	"svg-coordinate-system": new SVGCoordinateSystemExample(createContainer(body)),
+	"svg-circle": new SVGCircleExample(createContainer(body)),
+	"svg-ellipse": new SVGEllipseExample(createContainer(body)),
+	"svg-line": new SVGLineExample(createContainer(body)),
+	"svg-rectangle": new SVGRectangleExample(createContainer(body)),
+	"svg-path-bezier-line": new SVGPathLineExample(createContainer(body)),
+	"svg-path-bezier-quadratic": new SVGPathBezierQuadraticExample(createContainer(body)),
+	"svg-path-bezier-cubic": new SVGPathBezierCubicExample(createContainer(body)),
 	// "svg-path-bezier-arc" : new SVGPathArcExample(createContainer(body)),
 
 };

@@ -3,7 +3,7 @@
 * @description This interactive demonstrates the basic properties of the SVG Circle Element.
 * @tags [svg]
 */
-import {SVG, Rectangle} from '../vector/dist/lib/index';
+import {SVG, Rectangle} from '@kurtbruns/vector';
 
 interface Configuration {
 	width:number;
@@ -11,7 +11,7 @@ interface Configuration {
 	maxWidth:number;
 }
 
-export default class SVGAspectRatioExample {
+export class SVGAspectRatioExample {
 
 	config = {
 

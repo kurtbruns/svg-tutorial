@@ -7,7 +7,7 @@
 
 import { SVGExample } from "./svg-example";
 
-export default class SVGRectangleExample extends SVGExample {
+export class SVGRectangleExample extends SVGExample {
 
   constructor( idOrElement ) {
 

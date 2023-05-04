@@ -1,4 +1,4 @@
-import { SideBarLayout } from '../vector/dist/lib/index';
+import { SideBarLayout } from '@kurtbruns/vector';
 import { SVGExample } from "./svg-example";
 
 /**
@@ -7,7 +7,7 @@ import { SVGExample } from "./svg-example";
 * @author Kurt Bruns
 * @tags [svg]
 */
-export default class SVGPathArcExample extends SVGExample {
+export class SVGPathArcExample extends SVGExample {
 
   constructor(idOrElement) {
 
