@@ -1,5 +1,30 @@
 // <stdin>
+function updateTheme(isDark) {
+  document.documentElement.classList.toggle("light-theme", !isDark);
+  sessionStorage.setItem("theme", isDark ? "dark" : "light");
+}
+function initializeTheme() {
+  let theme = sessionStorage.getItem("theme");
+  let isDark = true;
+  if (theme !== null && theme === "light") {
+    isDark = false;
+  }
+  if (theme === null && window.matchMedia) {
+    const darkSchemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    darkSchemeMediaQuery.addEventListener("change", (e) => updateTheme(e.matches));
+    updateTheme(darkSchemeMediaQuery.matches);
+  } else {
+    updateTheme(isDark);
+  }
+  let toggle = document.querySelector(".nav-theme");
+  toggle.onclick = (event) => {
+    updateTheme(!(sessionStorage.getItem("theme") === "dark"));
+    event.preventDefault();
+    event.stopPropagation();
+  };
+}
 window.addEventListener("load", (event) => {
+  initializeTheme();
   let nav = document.querySelectorAll(".aside-li");
   let headings = [];
   for (let i = 0; i < nav.length; i++) {
