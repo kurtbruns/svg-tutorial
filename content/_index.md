@@ -382,7 +382,7 @@ The SVG specification has a lot of elements, and while not all are covered in th
 
 ### Clip Path Element
 
-Clip paths can be applied to elements to show only the part of the graphic contained within the shape of the clip path. The clipping is applied to an element and its children by setting the clip-path attribute to point to a clip-path element in the DOM tree. For example, the clip path defined by the child path element creates a **masking****** effect when applied to an image.
+Clip paths can be applied to elements to show only the part of the graphic contained within the shape of the clip path. The clipping is applied to an element and its children by setting the clip path attribute to point to a clip path element in the DOM tree. For example, the clip path defined by the child path element creates a **masking** effect when applied to an image.
 
 {{<highlight svg>}}
 <clipPath id="my-clip-path">
