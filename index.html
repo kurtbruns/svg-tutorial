@@ -54,13 +54,13 @@
 </span></span><span class=line><span class=cl>  <span class=nt>&lt;circle</span> <span class=na>cx=</span><span class=s>&#34;200&#34;</span> <span class=na>cy=</span><span class=s>&#34;75&#34;</span> <span class=na>r=</span><span class=s>&#34;25&#34;</span> <span class=na>style=</span><span class=s>&#34;fill:#68c541;&#34;</span><span class=nt>&gt;&lt;/circle&gt;</span>
 </span></span><span class=line><span class=cl><span class=nt>&lt;/svg&gt;</span></span></span></code></pre></div><p>This produces the graphic shown below.</p><svg xmlns="http://www.w3.org/2000/svg" style="width:100%;height:150px;margin-bottom:1rem" class="border"><circle cx="50" cy="75" r="25" style="fill:#de4850"/><circle cx="125" cy="75" r="25" style="fill:#eeb535"/><circle cx="200" cy="75" r="25" style="fill:#68c541"/></svg><p>Many different values are accepted for color. The colors are shown above using their hexadecimal representation.</p><h3 id=stylesheets>Stylesheets</h3><p>The alternative to inline styling is stylesheets. Stylesheets can either be defined in the SVG <code>style</code> element or as an external stylesheet. Stylesheets contain logic selectors which style elements based on their type, class and other attributes. Selectors have priority and can contain complex logic for selecting specific elements.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=line><span class=cl><span class=c>/* style elements by tag name */</span>
 </span></span><span class=line><span class=cl><span class=nt>circle</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=n>stroke</span><span class=p>:</span><span class=mh>#d0d0d0</span><span class=p>;</span> <span class=c>/* light grey */</span>
+</span></span><span class=line><span class=cl>  <span class=n>stroke</span><span class=p>:</span> <span class=mh>#d0d0d0</span><span class=p>;</span> <span class=c>/* light grey */</span>
 </span></span><span class=line><span class=cl>  <span class=n>stroke-width</span><span class=p>:</span> <span class=mi>4</span><span class=kt>px</span><span class=p>;</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>/* style by user interaction */</span>
 </span></span><span class=line><span class=cl><span class=nt>circle</span><span class=p>:</span><span class=nd>hover</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=n>stroke</span><span class=p>:</span><span class=mh>#808080</span><span class=p>;</span> <span class=c>/* medium grey */</span>
+</span></span><span class=line><span class=cl>  <span class=n>stroke</span><span class=p>:</span> <span class=mh>#808080</span><span class=p>;</span> <span class=c>/* medium grey */</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=c>/* style elements by class */</span>

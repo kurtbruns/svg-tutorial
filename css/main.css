@@ -32,6 +32,7 @@
   --background: #ffffff;
   --background-darker: hsl(0, 0%, 95%);
   --background-lighter: hsl(0, 0%, 95%);
+  --foreground: #d0d0d0;
   --font-color: #404040;
   --medium-color: #808080;
   --contrast-color: #404040;
@@ -1086,7 +1087,7 @@ body {
 
 /* default dark theme */
 :root {
-  --syntax-background: #333333;
+  --syntax-background: #303030;
   --syntax-foreground: #cdcdcd;
   --syntax-comment: #A9A9A9;
   --syntax-comment-active: #b1b2b3;
@@ -1517,6 +1518,6 @@ img.center {
   margin: 0; }
 
 pre.one-line {
-  background: var(--background-darker);
+  background: var(--background-lighter);
   margin: 0;
   padding: 0.5rem 0.75rem; }
