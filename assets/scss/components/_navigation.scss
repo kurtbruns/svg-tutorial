@@ -26,7 +26,7 @@ section.documentation main {
 header {
   // padding:1.5rem 0px;
   // background: #f8f8f8;
-  border-bottom:1px solid #dddddd;
+  border-bottom:1px solid var(--border-color);
 }
 
 section.aside {
@@ -72,7 +72,7 @@ section.aside aside {
 }
 
 .aside-link {
-  color: $font-color;
+  color: var(--font-color);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -88,22 +88,22 @@ li.group {
 
 
 .aside-link.active {
-  color: $primary-color;
+  color: var(--primary-color);
 }
 
-.aside-link img {
+.aside-link svg {
   vertical-align:middle;
   margin: 10px;
 }
 
 .aside-link:hover {
-  background: #f0f0f0;
+  background: var(--highlight);
   text-decoration: none;
   color: $font-color;
 }
 
 aside li.active {
-  background: #d2eff9;
+  background: var(--highlight);
 }
 
 .aside .heading {
@@ -150,7 +150,7 @@ aside {
   position:-webkit-sticky;
   top:0;
   width: 220px;
-  background: #ffffff;
+  background: var(--background);
   z-index: 2;
 }
 

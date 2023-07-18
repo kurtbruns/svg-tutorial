@@ -22,12 +22,28 @@ export class SVGClipPathExample extends OverflowArtboard {
 
     let interactive = this;
 
+    // let defs = interactive.defs();
+    // let gradient = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+    // gradient.setAttribute('id', 'gradient')
+
+    // let stop1 = document.createElement('stop');
+    // stop1.setAttribute('stop-color', '#000000');
+    // stop1.setAttribute('offset', '0%');
+    // gradient.appendChild(stop1)
+    // let stop2 = document.createElement('stop');
+    // stop2.setAttribute('stop-color', '#FFFFFF');
+    // stop2.setAttribute('offset', '100%');
+    // gradient.appendChild(stop2);
+    // defs.root.appendChild(gradient);
+
     let clipPath = interactive.clipPath();
-    let image = interactive.image('https://source.unsplash.com/ykH6Zx7ZKXQ/1600x900', 720, 405);
+
+    let rect = interactive.rect(0,0, 720, 300);
+    rect.root.setAttribute('fill', 'url(#gradient)')
+    // let image = interactive.image('./gradient.jpg', 720, 405);
+
+    
     let path = clipPath.path('');
-    path.classList.add('default');
-    path.style.fill = '#dddddd';
-    path.style.fillOpacity = '0.5';
 
     let c1 = interactive.control( 50, 50);
     let c2 = interactive.control( 250, 50);
@@ -39,9 +55,9 @@ export class SVGClipPathExample extends OverflowArtboard {
     }
     path.update();
     path.addDependency(c1, c2, c3, c4);
-
     
-    (image as any).setAttribute('clip-path', `url(#${clipPath.id})`);
+
+    (rect as any).setAttribute('clip-path', `url(#${clipPath.id})`);
 
   }
 }

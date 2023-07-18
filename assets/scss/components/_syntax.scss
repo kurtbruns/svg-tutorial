@@ -1,0 +1,195 @@
+/* default dark theme */
+:root {
+  --syntax-background: #333333;
+  --syntax-foreground: #cdcdcd;
+  --syntax-comment: #A9A9A9; // Comment color
+  --syntax-comment-active: #b1b2b3; // Comment active
+  --syntax-cursor: #ffffff; // Cursor color
+  --syntax-activeline-background: rgba(0, 0, 0, 0.2); // Active line
+  --syntax-activeline-foreground: rgba(0, 0, 0, 0.3);
+  --syntax-matchingtag-background: rgba(0, 0, 0, 0.7); // Matching tag
+  --syntax-selected-background: rgba(255, 255, 255, 0.1); // Selected text
+  --syntax-matchingbracket-background: rgba(255,255,255,0.2);
+
+  --syntax-string: #94C7B5; // HTML, CSS, JS string
+  --syntax-tag: #78AAD6;
+  --syntax-variable: #76D4D6;
+  --syntax-variable2: #ffffff;
+  --syntax-number: #ED9963;
+  --syntax-definition: #f7f7f7; // CSS definition
+  --syntax-keyword: #ffeead; // CSS !important, JS define a variable
+  --syntax-operator: #cda869; // Math
+  --syntax-meta: rgba(0, 0, 0, 0.7);
+  --syntax-meta-color: #f7f7f7;
+  --syntax-id: #D6ACD6; // CSS ID
+  --syntax-attribute: #FFD479; // HTML class=""
+  --syntax-property: #d4d4d4; // CSS definer
+  --syntax-qualifier: #FFD479; // CSS class
+  --syntax-error: #F78D8C;
+
+  --syntax-very-light-gray: #cdcdcd;
+  --syntax-light-gray: #868a8c;
+  --syntax-gray: #3a3a3a;
+  --syntax-dark-gray: #3a3a3a;
+  --syntax-very-dark-gray: #3a3a3a;
+
+  --syntax-cyan: #fff;
+  --syntax-blue: #6dc5dc;
+  --syntax-purple: #ffeead;
+  --syntax-green: #99ccaa;
+  --syntax-red: #78AAD6;
+  --syntax-orange: #9dbedd;
+  --syntax-light-orange: light-orange;
+}
+
+/* toggle light theme */
+:root.light-theme {
+
+  --syntax-very-light-gray: #cdcdcd;
+  --syntax-light-gray: #868a8c;
+  --syntax-gray: #3a3a3a;
+  --syntax-dark-gray: #3a3a3a;
+  --syntax-very-dark-gray: #3a3a3a;
+  
+  --syntax-cyan: #fff;
+  --syntax-light-blue: #6dc5dc;
+  --syntax-blue: #4992d8;
+  --syntax-blue2: #1365b1;
+  --syntax-purple: #9a52ad;
+  --syntax-red: #F78D8C;
+  --syntax-red2: #a73f3d;
+  --syntax-light-green: #99ccaa;
+  --syntax-green: #2ca57d;
+  --syntax-green2: #1b815f;
+  --syntax-yellow: #ffeead;
+  --syntax-orange0: #cda869;
+  --syntax-orange: #ED9963;
+  --syntax-orange2: #815329;
+  --syntax-orange3: #8d2d07;
+  
+  --syntax-background: #fafafa; // Code background
+  --syntax-foreground: #404040; // Code foreground
+  --syntax-comment: --syntax-light-gray; // Comment color
+  --syntax-comment-active: #b1b2b3; // Comment active
+  --syntax-cursor: #404040; // Cursor color
+  --syntax-activeline-background: rgba(0, 0, 0, 0.2); // Active line
+  --syntax-activeline-foreground: rgba(0, 0, 0, 0.3);
+  --syntax-matchingtag-background: rgba(0, 0, 0, 0.7); // Matching tag
+  --syntax-selected-background: rgba(255, 255, 255, 0.1); // Selected text
+  --syntax-matchingbracket-background: rgba(255,255,255,0.2);
+  
+  --syntax-number: #4992d8;
+  --syntax-string: #1c23a3;
+  --syntax-keywordConstant: #4992d8;
+  --syntax-operator: #815329;
+  
+  --syntax-tag: #93348b;
+  --syntax-variable: #76D4D6;
+  --syntax-variable2: #ffffff;
+  --syntax-definition: #f7f7f7; // CSS definition
+  --syntax-keyword: $purple; // CSS !important, JS define a variable
+  --syntax-keywordType: #F78D8C;
+  --syntax-meta: rgba(0, 0, 0, 0.7);
+  --syntax-meta-color: #f7f7f7;
+  --syntax-id: #D6ACD6; // CSS ID
+  --syntax-attribute: #a15727; // HTML class=""
+  --syntax-property: #d4d4d4; // CSS definer
+  --syntax-qualifier: #FFD479; // CSS class
+  --syntax-error: #F78D8C;
+}
+
+// pre-formatted text block
+pre.block {
+  background: var(--syntax-background);
+  font-size: 15px;
+  border: 1px solid var(--border-color);
+}
+
+.highlight > pre {
+  // background: #fafafa;
+  font-size: 15px;
+  border: 1px solid var(--border-color);
+}
+
+/* Background */ .chroma { color: var(--syntax-foreground); background-color: var(--syntax-background) }
+/* Other */ .chroma .x {  }
+/* Error */ .chroma .err { color: var(--syntax-error); background-color: var(--syntax-background) }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+/* LineHighlight */ .chroma .hl { display: block; width: 100%;background-color: #ffffcc }
+/* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7f7f7f }
+/* Keyword */ .chroma .k { color: var(--syntax-keyword) }
+/* KeywordConstant */ .chroma .kc { color: var(--syntax-keyword) }
+/* KeywordDeclaration */ .chroma .kd { color: var(--syntax-keyword) }
+/* KeywordNamespace */ .chroma .kn { color: #f92672 }
+/* KeywordPseudo */ .chroma .kp { color: var(--syntax-keyword) }
+/* KeywordReserved */ .chroma .kr { color: var(--syntax-keyword) }
+/* KeywordType */ .chroma .kt { color: var(--syntax-keyword) }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na { color: var(--syntax-attribute) }
+/* NameBuiltin */ .chroma .nb {  }
+/* NameBuiltinPseudo */ .chroma .bp {  }
+/* NameClass */ .chroma .nc { color: var(--syntax-attribute) }
+/* NameConstant */ .chroma .no { color: #93348b }
+/* NameDecorator */ .chroma .nd { color: var(--syntax-attribute) }
+/* NameEntity */ .chroma .ni {  }
+/* NameException */ .chroma .ne { color: var(--syntax-attribute) }
+/* NameFunction */ .chroma .nf { color: var(--syntax-attribute) }
+/* NameFunctionMagic */ .chroma .fm {  }
+/* NameLabel */ .chroma .nl {  }
+/* NameNamespace */ .chroma .nn {  }
+/* NameOther */ .chroma .nx { color: var(--syntax-foreground) }
+/* NameProperty */ .chroma y {  }
+/* NameTag */ .chroma .nt { color: var(--syntax-tag) }
+/* NameVariable */ .chroma .nv { color: var(--syntax-variable) }
+/* NameVariableClass */ .chroma .vc {  }
+/* NameVariableGlobal */ .chroma .vg {  }
+/* NameVariableInstance */ .chroma .vi {  }
+/* NameVariableMagic */ .chroma .vm {  }
+/* Literal */ .chroma .l { color: var(--syntax-number) }
+/* LiteralDate */ .chroma .ld { color: var(--syntax-string) }
+/* LiteralString */ .chroma .s { color: var(--syntax-string) }
+/* LiteralStringAffix */ .chroma .sa { color: var(--syntax-string) }
+/* LiteralStringBacktick */ .chroma .sb { color: var(--syntax-string) }
+/* LiteralStringChar */ .chroma .sc { color: var(--syntax-string) }
+/* LiteralStringDelimiter */ .chroma .dl { color: var(--syntax-string) }
+/* LiteralStringDoc */ .chroma .sd { color: var(--syntax-string) }
+/* LiteralStringDouble */ .chroma .s2 { color: var(--syntax-string) }
+/* LiteralStringEscape */ .chroma .se { color: var(--syntax-number) }
+/* LiteralStringHeredoc */ .chroma .sh { color: var(--syntax-string) }
+/* LiteralStringInterpol */ .chroma .si { color: var(--syntax-string) }
+/* LiteralStringOther */ .chroma .sx { color: var(--syntax-string) }
+/* LiteralStringRegex */ .chroma .sr { color: var(--syntax-string) }
+/* LiteralStringSingle */ .chroma .s1 { color: var(--syntax-string) }
+/* LiteralStringSymbol */ .chroma .ss { color: var(--syntax-string) }
+/* LiteralNumber */ .chroma .m { color: var(--syntax-number) }
+/* LiteralNumberBin */ .chroma .mb { color: var(--syntax-number) }
+/* LiteralNumberFloat */ .chroma .mf { color: var(--syntax-number) }
+/* LiteralNumberHex */ .chroma .mh { color: var(--syntax-number) }
+/* LiteralNumberInteger */ .chroma .mi { color: var(--syntax-number) }
+/* LiteralNumberIntegerLong */ .chroma .il { color: var(--syntax-number) }
+/* LiteralNumberOct */ .chroma .mo { color: var(--syntax-number) }
+/* Operator */ .chroma .o { color: var(--syntax-operator) }
+/* OperatorWord */ .chroma .ow { color: var(--syntax-operator) }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: var(--syntax-comment) }
+/* CommentHashbang */ .chroma .ch { color: var(--syntax-comment) }
+/* CommentMultiline */ .chroma .cm { color: var(--syntax-comment) }
+/* CommentSingle */ .chroma .c1 { color: var(--syntax-comment) }
+/* CommentSpecial */ .chroma .cs { color: var(--syntax-comment) }
+/* CommentPreproc */ .chroma .cp { color: var(--syntax-comment) }
+/* CommentPreprocFile */ .chroma .cpf { color: var(--syntax-comment) }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: var(--syntax-error) }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr {  }
+/* GenericHeading */ .chroma .gh {  }
+/* GenericInserted */ .chroma .gi { }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: var(--syntax-comment) }
+/* GenericTraceback */ .chroma .gt {  }
+/* GenericUnderline */ .chroma .gl {  }
+/* TextWhitespace */ .chroma .w {  }

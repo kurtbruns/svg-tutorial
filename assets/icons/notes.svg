@@ -2,12 +2,12 @@
   <defs>
     <style>
       .a {
-        fill: #f8f8f8;
+        fill: var(--background-lighter);
       }
 
       .b, .c {
         fill: none;
-        stroke: #404040;
+        stroke: var(--font-color);
         stroke-miterlimit: 10;
       }
 

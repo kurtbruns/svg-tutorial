@@ -83,22 +83,22 @@ export class SVGEllipseExample extends SVGExample {
     this.xml.x = 20;
     this.xml.y = this.maxY - 20;
     
-    tag.style.fill = 'purple';
-    cx.style.fill = '#ab6f00';
-    cy.style.fill = '#ab6f00';
-    rx.style.fill = '#ab6f00';
-    ry.style.fill = '#ab6f00';
+    tag.style.fill = 'var(--syntax-tag)';
+    cx.style.fill = 'var(--syntax-attribute)';
+    cy.style.fill = 'var(--syntax-attribute)';
+    rx.style.fill = 'var(--syntax-attribute)';
+    ry.style.fill = 'var(--syntax-attribute)';
     
     let cxValue = cx.tspan('');
     let cyValue = cy.tspan('');
     let rxValue = rx.tspan('');
     let ryValue = ry.tspan('');
-    cxValue.style.fill = '#333333';
-    cyValue.style.fill = '#333333';
-    rxValue.style.fill = '#333333';
-    ryValue.style.fill = '#333333';
+    cxValue.style.fill = 'var(--syntax-string)';
+    cyValue.style.fill = 'var(--syntax-string)';
+    rxValue.style.fill = 'var(--syntax-string)';
+    ryValue.style.fill = 'var(--syntax-string)';
     
-    cxValue.style.fill = '#333333';
+    cxValue.style.fill = 'var(--syntax-string)';
     cxValue.addDependency(ellipse);
     cxValue.update = function() {
       cxValue.text = `"${ellipse.cx.toFixed(0)}" `;

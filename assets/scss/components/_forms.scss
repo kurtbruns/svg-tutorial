@@ -1,127 +1,122 @@
-/**
- * Forms
- */
+/* Forms
+  =============== */
 
 // Display for all input fields (except buttons and checkbox)
 %forms {
-  display: block;
-  border: $form-border;
-  border-radius: $border-radius;
-  padding: 0.75rem;
-  outline: none;
-  background: $input-background;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  width: 100%;
-  max-width: 100%;
-  line-height: 1;
+    display: block;
+    border: $form-border;
+    border-radius: $border-radius;
+    padding: .75rem;
+    outline: none;
+    background: $input-background;
+    margin-bottom: .5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1;
 }
 
 // Input fields on hover
 %forms-hover {
-  border: $form-border-hover;
+    border: $form-border-hover;
 }
 
 // Input fields on focus
 %forms-focus {
-  border: $form-border-focus;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px lighten($link-color, 30%);
+    border: $form-border-focus;
+    // box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px lighten($link-color, 30%);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px yellow;
 }
 
 // Variable containing all input fields
 #{$forms} {
-  @extend %forms;
-
-  &:hover {
-    @extend %forms-hover;
-  }
-
-  &:focus,
-  &:active {
-    @extend %forms-focus;
-  }
+    @extend %forms;
+    &:hover {
+        @extend %forms-hover;
+    }
+    &:focus,
+    &:active {
+        @extend %forms-focus;
+    }
 }
 
 textarea {
-  overflow: auto;
-  height: auto;
+    overflow: auto;
+    height: auto;
 }
 
 fieldset {
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  padding: $padding;
-  margin: $margins 0;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    padding: $padding;
+    margin: $margins 0;
 }
 
 legend {
-  padding: 0 0.5rem;
-  font-weight: 600;
+    padding: 0 .5rem;
+    font-weight: 600;
+}
+
+select.title-filter {
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 6px;
+  font-weight:bold;
 }
 
 // Fix issues with select
 select {
-  color: $font-color;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJBAMAAADN8WE8AAAAJ1BMVEUAAABHcEwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB9YSk7AAAADXRSTlPXABaehSjPsTwKw2xUcKPlSQAAADtJREFUCNdjMGBgYGAWBAKGACCLFcwSAbIcwSyhBAY2RTBLcAMDtyCENYthJZQlw3AQyhIsF4SxOiAsAFMMCKPY35E7AAAAAElFTkSuQmCC) 
-    right center no-repeat;
-  line-height: 1; // ensures text doesn't get cut off
+    color: $font-color;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cdefs%3E%3Cstyle%3E.a%7Bfill:%23404040;%7D%3C/style%3E%3C/defs%3E%3Cpolygon class='a' points='8 12 12.619 4 3.381 4 8 12'/%3E%3C/svg%3E") right center no-repeat;
+    background-origin: content-box;
+    line-height: 1; // ensures text doesn't get cut off
 }
 
 select::-ms-expand {
-  display: none; // dropdown icon fix for IE
+    display: none; // dropdown icon fix for IE
 }
 
 // Make range full width
-[type='range'] {
-  width: 100%;
+[type=range] {
+    width: 100%;
 }
 
 // Labels
 label {
-  font-weight: 600;
-  max-width: 100%;
-  display: block;
-  margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    max-width: 100%;
+    display: block;
+    margin: 1rem 0 .5rem;
 }
 
 @include small-breakpoint {
-  .split-form {
-    // Split forms have right aligned labels and margins on the column
-    label {
-      text-align: right;
-      padding: 0 0.5rem;
-      margin-bottom: 1rem;
+    .split-form {
+        // Split forms have right aligned labels and margins on the column
+        label {
+            text-align: right;
+            padding: 0 .5rem;
+            margin-bottom: 1rem;
+        }
     }
-  }
 }
 
-// Form validation
+// Errors
 input,
 select,
 textarea {
-  &.has-error {
-    border: 1px solid $error;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px lighten($error, 35%);
-  }
-
-  &.is-success {
-    border: 1px solid $success;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 6px lighten($success, 25%);
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
     &.has-error {
-      @extend .has-error;
+        border: 1px solid $error;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1), 0 0 6px lighten($error, 35%);
     }
-
-    &.is-success {
-      @extend .is-success;
+    &:hover,
+    &:focus,
+    &:active {
+        &.has-error {
+            @extend .has-error;
+        }
     }
-  }
 }
 
 // Placeholder Text
@@ -129,5 +124,5 @@ textarea {
 ::-moz-placeholder,
 :-moz-placeholder,
 :-ms-input-placeholder {
-  color: $placeholder;
+    color: $placeholder;
 }

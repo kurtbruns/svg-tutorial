@@ -70,16 +70,6 @@ export class SVGPathArcExample extends SVGExample {
     // path.addDependency(largeArcFlag);
     // path.addDependency(sweepFlag);
 
-    // TODO: this is rather hacky, and probably best replaced by implementing the
-    // tspan element in our SVG wrapper class.
-    text.update = function() {
-      let tag = `<tspan style="fill:purple">path</tspan>`;
-      let d = `<tspan style="fill:#ab6f00">d</tspan>`;
-      this.contents = `&lt;${tag} ${d}="M ${start.x.toFixed(0)} ${start.y.toFixed(0)} A ${rx.value} ${ry.value} ${xAxisRotation.value} ${largeArcFlag.checked ? '1' : '0'} ${sweepFlag.checked ? '1' : '0'} ${control.x.toFixed(0)} ${control.y.toFixed(0)}"&gt`;
-    }
-    text.update();
-    text.addDependency(path);
-
     // Code under this point is additional paths showsing all the different options
     // for the flags. TODO: move the paths into a group and change the opacity of
     // the group instead of for each individual p
@@ -100,5 +90,27 @@ export class SVGPathArcExample extends SVGExample {
     let path2 = createPath(xAxisRotation,false, true);
     let path3 = createPath(xAxisRotation,true, false);
     let path4 = createPath(xAxisRotation,true, true);
+
+    this.xml.tspan('&lt');
+    let tag = this.xml.tspan('path ');
+    let d = this.xml.tspan('d=');
+    d.style.fill = 'var(--syntax-attribute)';
+    this.xml.tspan('&gt;');
+    // let close = this.xml.tspan('&gt;&lt;/ellipse&gt;');
+
+    this.xml.x = 20;
+    this.xml.y = this.maxY - 20;
+    tag.style.fill = 'var(--syntax-tag)';
+
+    let dValue = d.tspan('');
+    dValue.style.fill = 'var(--syntax-string)';
+
+    dValue.addDependency(path);
+    dValue.update = function () {
+      dValue.text = `"${path.d}" `;
+    };
+
+    this.xml.addDependency(path);
+    path.updateDependents();
   }
 }

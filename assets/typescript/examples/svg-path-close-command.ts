@@ -20,7 +20,7 @@ export class SVGPathCloseExample extends SVGExample {
 
     let path = interactive.path('');
     path.classList.add('default');
-    path.style.fill = '#dddddd';
+    path.style.fill = 'var(--highlight)';
     path.style.fillOpacity = '0.5';
 
     let c1 = interactive.control( 50, 50);
@@ -33,15 +33,28 @@ export class SVGPathCloseExample extends SVGExample {
     path.update();
     path.addDependency(c1, c2, c3);
 
-    // TODO: this is rather hacky, and probably best replaced by implementing the
-    // tspan element in our SVG wrapper class.
-    text.update = function() {
-      let tag = `<tspan style="fill:purple">path</tspan>`;
-      let d = `<tspan style="fill:#ab6f00">d</tspan>`;
-      this.contents = `&lt;${tag} ${d}="${path.d}"&gt`;
-    }
-    text.update();
-    text.addDependency(path);
+    this.xml.tspan('&lt');
+    let tag = this.xml.tspan('path ');
+    let d = this.xml.tspan('d=');
+    d.style.fill = 'var(--syntax-attribute)';
+    this.xml.tspan('&gt;');
+    // let close = this.xml.tspan('&gt;&lt;/ellipse&gt;');
+
+    this.xml.x = 20;
+    this.xml.y = this.maxY - 20;
+    tag.style.fill = 'var(--syntax-tag)';
+
+    let dValue = d.tspan('');
+    dValue.style.fill = 'var(--syntax-string)';
+
+    dValue.addDependency(path);
+    dValue.update = function () {
+      dValue.text = `"${path.d}" `;
+    };
+
+    this.xml.addDependency(path);
+    path.updateDependents();
+
 
   }
 }

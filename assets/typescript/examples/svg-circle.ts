@@ -48,11 +48,11 @@ export class SVGCircleExample extends SVGExample {
 		// tspan element in our SVG wrapper class.
 		let lt = text.tspan('&lt;');
 		text.tspan('circle').style.fill = 'purple';
-		text.tspan(' cx').style.fill = '#ab6f00';
+		text.tspan(' cx').style.fill = 'var(--syntax-attribute)';
 		let cx = text.tspan('');
-		text.tspan(' cy').style.fill = '#ab6f00';
+		text.tspan(' cy').style.fill = 'var(--syntax-attribute)';
 		let cy = text.tspan('');
-		text.tspan(' r').style.fill = '#ab6f00';
+		text.tspan(' r').style.fill = 'var(--syntax-attribute)';
 		let r = text.tspan('');
 		let gt = text.tspan('&gt;');
 

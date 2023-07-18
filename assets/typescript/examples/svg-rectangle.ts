@@ -37,18 +37,53 @@ export class SVGRectangleExample extends SVGExample {
     rect.addDependency(c1);
     rect.addDependency(c2);
     
-    // TODO: this is rather hacky, and probably best replaced by implementing the
-    // tspan element in our SVG wrapper class.
-    text.update = function() {
-      let tag = `<tspan style="fill:purple">rect</tspan>`;
-      let x = `<tspan style="fill:#ab6f00">x</tspan>`;
-      let y = `<tspan style="fill:#ab6f00">y</tspan>`;
-      let width = `<tspan style="fill:#ab6f00">width</tspan>`;
-      let height = `<tspan style="fill:#ab6f00">height</tspan>`;
-      this.contents = `&lt;${tag} ${x}="${rect.x.toFixed(0)} ${y}="${rect.y.toFixed(0)} ${width}="${rect.width.toFixed(0)} ${height}="${rect.height.toFixed(0)}"&gt`;
-    }
-    text.update();
-    text.addDependency(rect);
+    this.xml.tspan('&lt');
+    let tag = this.xml.tspan('rect ');
+    let x = this.xml.tspan('x=');
+    let y = this.xml.tspan('y=');
+    let width = this.xml.tspan('width=');
+    let height = this.xml.tspan('height=');
+    this.xml.tspan('&gt;');
+    // let close = this.xml.tspan('&gt;&lt;/ellipse&gt;');
+
+    this.xml.x = 20;
+    this.xml.y = this.maxY - 20;
+    tag.style.fill = 'var(--syntax-tag)';
+    x.style.fill = 'var(--syntax-attribute)';
+    y.style.fill = 'var(--syntax-attribute)';
+    width.style.fill = 'var(--syntax-attribute)';
+    height.style.fill = 'var(--syntax-attribute)';
+
+    let xValue = x.tspan('');
+    let yValue = y.tspan('');
+    let widthValue = width.tspan('');
+    let heightValue = height.tspan('');
+    xValue.style.fill = 'var(--syntax-string)';
+    yValue.style.fill = 'var(--syntax-string)';
+    widthValue.style.fill = 'var(--syntax-string)';
+    heightValue.style.fill = 'var(--syntax-string)';
+
+    xValue.addDependency(rect);
+    xValue.update = function () {
+      xValue.text = `"${rect.x.toFixed(0)}" `;
+    };
+
+    yValue.addDependency(rect);
+    yValue.update = function () {
+      yValue.text = `"${rect.y.toFixed(0)}" `;
+    };
+
+    widthValue.addDependency(rect);
+    widthValue.update = function () {
+      widthValue.text = `"${rect.width.toFixed(0)}" `;
+    };
+
+    heightValue.addDependency(rect);
+    heightValue.update = function () {
+      heightValue.text = `"${rect.height.toFixed(0)}"`
+    };
+    rect.updateDependents();
+
     
   }
 

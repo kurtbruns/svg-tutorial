@@ -1,41 +1,76 @@
-/*! 
- * Primitive UI | MIT License
- *
- * A minimalist front-end design toolkit built with Sass for developing 
- * responsive, browser-consistent web apps.
- *
- * Author: Tania Rascia <hello@taniarascia.com>
- * Source: https://github.com/taniarascia/primitive
- * Documentation: https://taniarascia.github.io/primitive
- */
+/*! Primitive CSS Framework Author: Tania Rascia */
 
-//==============================================================================
 // Configuration
-//==============================================================================
+@import "base/variables";
+@import "base/mixins";
 
-@import 'base/variables';
-@import 'base/mixins';
-
-//==============================================================================
 // Reset
-//==============================================================================
+@import "base/normalize";
+@import "base/reset";
 
-@import 'base/normalize';
-@import 'base/reset';
-
-//==============================================================================
 // Components
-//==============================================================================
+@import "components/scaffolding";
+@import "components/flex";
+@import "components/grid";
+@import "components/helpers";
+@import "components/buttons";
+@import "components/forms";
+@import "components/tables";
+@import "components/navigation";
+@import "components/layout";
+@import "components/syntax";
 
-@import 'components/scaffolding';
-@import 'components/grid';
-@import 'components/helpers';
-@import 'components/highlight';
-@import 'components/buttons';
-@import 'components/forms';
-@import 'components/tables';
-@import 'components/navigation';
-@import 'components/layout';
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-theme {
+  // margin-left: auto;
+  margin: auto 0.5rem auto auto;
+  height: 36px;
+  user-select: none; /* standard syntax */
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+.theme-controls {
+  position: relative;
+  margin-top: -3rem;
+  padding-top: 3rem;
+}
+
+.nav-theme {
+  background: #404040;
+  border: 1.25px solid transparent;
+  border-radius: 16px;
+}
+
+.nav-theme:hover {
+  border: 1.25px solid #888888;
+}
+
+.icon-button {
+  border-radius: 50%;
+  background-color: #f0f0f0;
+}
+
+.light-theme .nav-theme {
+  background: #f8f8f8;
+  border: 1.25px solid #dddddd;
+  border-radius: 16px;
+}
+
+.light-theme .nav-theme:hover {
+  border: 1.25px solid #a0a0a0;
+}
+
+.light-theme .icon-button {
+  background-color: #404040;
+}
 
 
 section.copyright {
@@ -53,7 +88,7 @@ img.center {
 }
 
 pre.one-line {
-  background: #f8f8f8;
+  background: var(--background-darker);
   margin: 0;
   padding: 0.5rem 0.75rem;
 }

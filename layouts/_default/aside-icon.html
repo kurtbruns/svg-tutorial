@@ -17,7 +17,12 @@
     </aside>
   </div>
   <main class="medium-container" id="main-content">
-    <h1>{{.Title}}</h1>
+    <div class="nav">
+      <h1>{{.Title}}</h1>
+      <div class="nav-theme">
+        {{- (resources.Get "icons/theme-toggle.svg" | resources.Minify).Content | safeHTML -}}
+      </div>
+    </div>
     <div style="margin-bottom:1rem">
       <div class="author">Author: <a href={{.Site.Params.AuthorLink}}>{{.Site.Params.Author}}</a></div>
       <div class="lastMod">Updated: {{ .Lastmod.Format "Jan 2, 2006"}}</div>

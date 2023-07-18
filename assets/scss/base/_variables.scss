@@ -1,154 +1,209 @@
-/**
- * Variables
- *
- * The majority of the configuration for the toolkit.
- */
 
-//==============================================================================
-// Containers
-//==============================================================================
+// TODO: lighter and darker should switch directions with the theme. But maybe this logic is handled in the .light-theme logic just fine
 
-$x-small: 425px !default;
-$small: 600px !default;
-$medium: 752px !default;
-$large: 984px !default;
+/* default dark theme */
+:root {
+  --background: #202020;
+  --background-darker: #181818;
+  --background-lighter: #303030;
+  --font-color: #e0e0e0;
+  --medium-color: #a0a0a0;
+  --contrast-color: #bebebe;
 
-//==============================================================================
-// Breakpoints
-//==============================================================================
+  --highlight: #404040;
+  --border-color: #666666;
+  --border-color-darker: #4d4d4d;
 
-$mobile: $x-small !default;
-$tablet: $small !default;
-$desktop: $medium !default;
+  --grid-primary: #666666;
+  --grid-secondary: #404040;
+  --grid-tertiary: #262626;
 
-//==============================================================================
-// Global Colors
-//==============================================================================
+  // --primary-color: #ffedba;
+  --primary-color: hsl(44, 97%, 84%);
 
-$background: white !default;
-$primary-color: #0366ee !default;
-$secondary-color: #29de7d !default;
-$accent-color: #cdcdcd !default;
-$alternate-background: #fafafa !default;
-$alternate-color: #404040 !default;
-$link-color: $primary-color !default;
-$link-hover-color: darken($link-color, 15%) !default;
-$highlight: #ffeea8 !default;
-$error: #d33c40 !default;
-$success: #29de7d !default;
-$bq-border: 16px solid #f0f0f0 !default;
+  --accent-color: hsl(0, 0%, 20%);
+  --accent-color-lighter: hsl(0, 0%, 30%);
+  --accent-color-mid: hsl(0, 0%, 50%);
 
-//==============================================================================
-// Typography
-//==============================================================================
+  --button-background: #404040;
+  --button-background-hover: hsl(0, 0%, 35%);
+  --button-color: #e0e0e0;
+  --button-highlight-color: #666666; 
+  --button-border-color: #666666;
+  --button-border-hover-color: #777777;
 
-// Body
-$font-size: 1rem !default;
-$body-font-size: 1rem !default;
-$font-style: normal !default;
-$font-variant: normal !default;
-$font-weight: normal !default;
-$font-color: #404040 !default;
-$font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif !default;
-$line-height: 1.6 !default;
+  --red: #F2777A;
+  --green: #92D192;
+  --blue: #6AB0F3;
+}
+
+/* toggle light theme */
+:root.light-theme {
+
+  --background: #ffffff;
+  --background-darker: hsl(0, 0%, 95%); // darker
+  --background-lighter: hsl(0, 0%, 95%); // darker
+  --font-color: #404040;
+  --medium-color: #808080;
+  --contrast-color: #404040;
+
+  --highlight: #f0f0f0;
+  --border-color: hsl(0, 0%, 80%);
+  --border-color-darker: hsl(0, 0%, 90%); // actually means lighter
+
+  --grid-primary: #a0a0a0;
+  --grid-secondary: #d0d0d0;
+  --grid-tertiary: #f0f0f0;
+
+  --primary-color: #485bfc;
+  --primary-dark-10: $primary-light-10;
+  --primary-dark-15: $primary-light-15;
+
+  --main: #404040;
+  
+  --button-background: #f8f8f8;
+  --button-background-hover: hsl(0, 0%, 90%);
+  --button-color: #404040;
+  --button-highlight-color: #404040; 
+  --button-border-color: #a0a0a0;
+  --button-border-hover-color: #777777;
+
+
+  --color-primary: #485bfc;
+  --color-secondary: #4bb77e;
+  --tertiary: #c74440;
+ 
+  --red: #c74440;
+  --green: #4bb77e;
+  --blue: #485bfc;
+ 
+}
+
+/* layout variables */
+
+$header-height: 4rem;
+$aside-width: 240px;
+$aside-container: 1024px; 
+
+/* Containers */
+
+$x-small: 240px;
+$small: 608px;
+$medium: 720px + 32px; /* 720 max width + margin */
+$large: 932px;
+
+/* Breakpoints */
+
+$mobile: $small;
+$tablet: $medium + 16px;
+$desktop: $large;
+
+/* Colors */
+
+$background: var(--background);
+$primary-color: var(--primary-color);
+$secondary-color: #29de7d;
+$alternate-background: #fafafa;
+$alternate-color: #404040;
+$link-color: var(--primary-color);
+$link-hover-color: var(--primary-dark-15);
+$highlight: #f0f0f0;
+$error: #D33C40;
+$bq-border: 16px solid #f0f0f0;
+
+/* Typography */
+
+// Body font
+$font-size: 1rem;
+$body-font-size: 1rem;
+$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-color: var(--font-color);
+$font-color-light: #606060;
+$font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+// $font-family: 'Helvetica Neue','Segoe UI','Helvetica','Arial', sans-serif;
+$line-height: 1.6;
 
 // Headings
-$heading-font-color: #404040 !default;
-$heading-font-weight: 600 !default;
-$heading-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial,
-  sans-serif !default;
-$heading-line-height: 1.2 !default;
+$heading-font-color: var(--font-color);
+$heading-font-weight: 600;
+$heading-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+$heading-line-height: 1.2;
 
-$h1-mobile: 1.75rem !default;
-$h2-mobile: 1.5rem !default;
-$h3-mobile: 1.25rem !default;
-$h4-mobile: 1.1rem !default;
-$h5-mobile: 1rem !default;
+// Mobile heading font size
+$h1-mobile: 1.75rem;
+$h2-mobile: 1.5rem;
+$h3-mobile: 1.25rem;
+$h4-mobile: 1.1rem;
+$h5-mobile: 1rem;
 
-$h1: 2.25rem !default;
-$h2: 2rem !default;
-$h3: 1.75rem !default;
-$h4: 1.5rem !default;
-$h5: 1.25rem !default;
+// Heading font size
+$h1: 2.0rem;
+$h2: 1.75rem;
+$h3: 1.5rem;
+$h4: 1.25rem;
+$h5: 1rem;
 
-//==============================================================================
-// Spacing
-//==============================================================================
+/* Padding */
 
-$padding: 1rem !default;
-$margins: 1.5rem !default;
-$content-padding: 60px 0 !default;
-$content-padding-mobile: 30px 0 !default;
+$padding: 1rem;
+$margins: 1.5rem;
+$content-padding: 60px 0;
+$content-padding-mobile: 30px 0;
 
-//==============================================================================
-// Borders
-//==============================================================================
+/* Borders */
 
-$border-width: 1px !default;
-$border-style: solid !default;
-$border-color: #dedede !default;
-$border-radius: 4px !default;
-$borders: $border-width $border-style $border-color !default;
+$border-width: 1px;
+$border-style: solid;
+$border-color: var(--border-color);
+$border-radius: 4px;
+$borders: $border-width $border-style $border-color;
 
-//==============================================================================
-// Buttons
-//==============================================================================
+/* Buttons */
 
-$button-background: $primary-color !default;
-$button-background-hover: darken($button-background, 10%) !default;
-$button-color: #ffffff !default;
-$button-font-weight: 600 !default;
-$button-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif !default;
-$button-font-size: 1rem !default;
-$button-border-width: 1px !default;
-$button-border-style: solid !default;
-$button-border-color: $button-background !default;
-$button-border-radius: $border-radius !default;
-$button-text-transform: none !default;
-
-// Accent buttons
-$accent-button-background: $secondary-color !default;
-$accent-button-color: #ffffff !default;
-$accent-button-color-hover: #ffffff !default;
+$button-background: var(--background-lighter);
+$button-background-hover: var(--primary-dark-10);
+$button-color: var(--button-color);
+$button-font-weight: 600;
+$button-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+$button-font-size: 1rem;
+$button-border-width: 1px;
+$button-border-style: solid;
+$button-border-color: var(--primary-color);
+$button-border-radius: $border-radius;
+$button-text-transform: none;
 
 // Muted Buttons
-$muted-border: 1px solid $accent-color !default;
-$muted-border-hover: 1px solid darken($accent-color, 30%) !default;
-$muted-background: transparent !default;
-$muted-background-hover: transparent !default;
-$muted-color: darken($accent-color, 50%) !default;
-$muted-color-hover: darken($accent-color, 50%) !default;
+$muted-border: 1px solid var(--accent-color);
+$muted-border-hover: 1px solid var(--accent-color-lighter);
+$muted-background: var(--background-darker);
+$muted-background-hover: var(--background);
+$muted-color: var(--font-color);
+$muted-color-hover: var(--font-color);
 
 // Round Buttons
-$round-buttons: 40px !default;
+$round-buttons: 40px;
 
-//==============================================================================
-// Forms
-//==============================================================================
+/* Forms */
 
-$forms: (
-  '[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email],        [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea'
-) !default;
-$buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]') !default;
-$input-background: transparent !default;
-$placeholder: darken($accent-color, 20%) !default;
-$form-border: 1px solid $border-color !default;
-$form-border-hover: 1px solid darken($border-color, 10%) !default;
-$form-border-focus: 1px solid $link-color !default;
+$forms: ('[type=color], [type=date], [type=datetime], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=url], [type=week], [type=time], select, textarea');
+$buttons: ('.button, a.button, button, [type=submit], [type=reset], [type=button]');
+$input-background: transparent;
+$placeholder: var(--accent-color-lighter);
+$form-border: 1px solid $border-color;
+$form-border-hover: 1px solid var(--border-color-darker);
+$form-border-focus: 1px solid $link-color;
 
-//==============================================================================
-// Tables
-//==============================================================================
+/* Tables */
 
-$stripes: #f8f8f8 !default;
-$caption: #ababab !default;
+$stripes: var(--highlight);
+$caption: #ababab;
 
-//==============================================================================
-// Code
-//==============================================================================
+/* Code */
 
-$code-color: $font-color !default;
-$code-size: 14px !default;
-$code-family: Menlo, monospace !default;
-$code-background: transparent !default;
-$code-borders: $borders !default;
+$code-color: $font-color;
+$code-size: 14px;
+$code-family: Menlo, monospace;
+$code-background: transparent;
+$code-borders: $borders;

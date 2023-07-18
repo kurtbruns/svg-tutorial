@@ -1,25 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
   <defs>
     <style>
-      .a {
-        fill: #f8f8f8;
-      }
-
-      .b {
-        fill: #333;
-      }
-
-      .c {
+      .c-unique {
         fill: none;
-        stroke: #333;
+        stroke: var(--font-color);
         stroke-miterlimit: 10;
       }
     </style>
   </defs>
   <g>
-    <rect class="a" x="0.5" y="2.5" width="15" height="11"/>
-    <path class="b" d="M15,3V13H1V3H15m1-1H0V14H16V2Z"/>
+    <rect fill="var(--background-lighter)" x="0.5" y="2.5" width="15" height="11"/>
+    <path fill="var(--font-color)" d="M15,3V13H1V3H15m1-1H0V14H16V2Z"/>
   </g>
-  <polyline class="c" points="16 8 8 8 0 8"/>
-  <polyline class="c" points="8 14 8 8 8 2"/>
+  <polyline class="c-unique" points="16 8 8 8 0 8"/>
+  <polyline class="c-unique" points="8 14 8 8 8 2"/>
 </svg>

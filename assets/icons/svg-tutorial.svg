@@ -6,7 +6,7 @@
       }
 
       .b {
-        fill: #404040;
+        fill: var(--font-color);
       }
     </style>
   </defs>

@@ -6,7 +6,7 @@
       }
 
       .a, .b {
-        stroke: #404040;
+        stroke: var(--font-color);
         stroke-miterlimit: 10;
       }
 

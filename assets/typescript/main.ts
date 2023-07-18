@@ -4,10 +4,44 @@
  * Author: Kurt Bruns
  */
 
+
+function updateTheme(isDark:boolean) {
+    document.documentElement.classList.toggle('light-theme', !isDark);
+    sessionStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+function initializeTheme() {
+
+    let theme = sessionStorage.getItem('theme');
+    let isDark = true;
+    if (theme !== null && theme === 'light') {
+      isDark = false;
+    }
+
+    // Use user's default theme if one is not specified
+    if (theme === null && window.matchMedia) {
+        const darkSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkSchemeMediaQuery.addEventListener('change', (e) => updateTheme(e.matches));
+        updateTheme(darkSchemeMediaQuery.matches);
+      } else {
+        updateTheme(isDark)
+      }
+
+      let toggle: HTMLDivElement = document.querySelector('.nav-theme');
+      toggle.onclick = (event) => {
+        updateTheme(!(sessionStorage.getItem('theme') === 'dark'));
+        event.preventDefault();
+        event.stopPropagation();
+      };
+      
+}
+
 /*
 * When the window finishes loading, initialize state and register an event listener to the scroll event.
 */
 window.addEventListener('load', (event) => {
+
+    initializeTheme();
 
     // Initialize nav elements and get a handle on headings
     let nav = document.querySelectorAll(".aside-li") as unknown as HTMLElement[];

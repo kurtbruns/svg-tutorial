@@ -1,4 +1,7 @@
-// Media query for mobile first layout
+/* Mixins
+  =============== */
+
+// Media query for mobile first layout 
 @mixin small-breakpoint {
   @media (min-width: #{$mobile}) {
     @content;

@@ -7,6 +7,6 @@
   "license": "MIT",
   "homepage": "https://kurtbruns.github.io/svg-tutorial/",
   "dependencies": {
-    "@kurtbruns/vector": "^0.1.2"
+    "@kurtbruns/vector": "^0.1.14"
   }
 }

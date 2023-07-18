@@ -20,21 +20,21 @@ aside:
 # - Scripting
 ---
 
-This article is an *interactive* tutorial for authoring SVG documents. It introduces the basic syntax, structure and elements of the SVG specification. The tutorial uses the [Vector.js](https://vectorjs.org/) library to make the SVGs on this page interactive.
+This article is an *interactive* tutorial for authoring SVG documents. It introduces the basic syntax, structure and elements of the SVG specification. The tutorial uses [this library](https://github.com/kurtbruns/vector) to make the SVGs on this page interactive.
 
 ## Introduction
 
-SVG is an acronym for "scalable vector graphics". The SVG file type and specification is an XML based language for creating vector graphics both as stand-alone and embedded documents. SVG is a popular choice among developers and artists for creating vector based images such as logos, patterns and masking effects, because the file size is small and the resulting image is crisp.
+SVG is an acronym for "scalable vector graphics". The SVG file type and specification is an XML-based language for creating vector graphics both as stand-alone and embedded documents. SVG is a popular choice among developers and artists for creating vector-based images such as logos, patterns and masking effects because the file size is small and the resulting image is crisp.
 
 Elements within an SVG document are defined using XML syntax and make up a tree-like structure called the SVG Document Object Model or SVGDOM for short. For example, the SVG below draws three equally spaced circles. The `svg` tag is the root of the document and defines a drawing area with a width of `200` and a height of `100`. Each circle is described by the tag `circle` which has properties that define the center and radius of the circle.
 
-{{< highlight svg >}}
+{{<highlight svg>}}
 <svg width="200" height="100">
     <circle cx="50" cy="50" r="15"></circle>
     <circle cx="100" cy="50" r="15"></circle>
     <circle cx="150" cy="50" r="15"></circle>
 </svg>
-{{< /highlight >}}
+{{</highlight>}}
 
 This SVG is rendered below.
 
@@ -42,10 +42,10 @@ This SVG is rendered below.
   <style>
   .example-svg {
     margin-bottom:1rem;
-    border:1px solid #333333;
+    border:1px solid var(--border-color);
   }
   .example-svg circle {
-    fill:#333333;
+    fill: var(--font-color);
   }
   </style>
   <circle cx="50" cy="50" r="15"></circle>
@@ -53,15 +53,15 @@ This SVG is rendered below.
   <circle cx="150" cy="50" r="15"></circle>
 </svg>
 
-By default, the SVG Coordinate System places the origin in the top-left corner of the drawing area. The positive *x* direction is to the right and the positive *y* direction is **down**. This can be tricky, especially for the uninitiated, however this is common in computer graphics to define the coordinate system with the *y*-direction as down instead of up.<!--TODO cite -->
+By default, the SVG Coordinate System places the origin in the top-left corner of the drawing area. The positive *x* direction is to the right and the positive *y* direction is **down**. This can be tricky, especially for the uninitiated, however, this is common in computer graphics to define the coordinate system with the *y*-direction as down instead of up.<!--TODO cite -->
 
 {{<example "SVGCoordinateSystemExample">}}
 
-Click and drag the blue control point above to see how a point is defined in the coordinate system.
+Click and drag the control point above to see how a point is defined in the coordinate system.
 
 ## XML Syntax
 
-The XML elements that make up the SVG language are formed by an opening and closing tag. The tag name indicates the element that is being defined. The opening tag contains attributes which describe the properties of the element.
+The XML elements that make up the SVG language are formed by an opening and closing tag. The tag name indicates the element that is being defined. The opening tag contains attributes that describe the properties of the element.
 
 For example, in the code snippet below, the `circle` tag defines a circle that is centered at the point `(50,50)` with a radius of `15`. The attributes `cx="50"`, `cy="50"` and `r="15"` define the position and radius.
 
@@ -69,7 +69,7 @@ For example, in the code snippet below, the `circle` tag defines a circle that i
 <circle cx="50" cy="50" r="15"></circle>
 ```
 
-In addition to element specific attributes, there are also global attributes that can be defined for any element. For example, the group element below is given the id `example-id` and the class `example-class`.
+In addition to element-specific attributes, there are also global attributes that can be defined for any element. For example, the group element below is given the id `example-id` and the class `example-class`.
 
 ```html
 <g id="example-id" class="example-class">
@@ -87,7 +87,7 @@ Global attributes are useful for styling, manipulating and querying elements. In
 
 ## Basic Elements
 
-The basic visual elements define shapes and lines. For example, some basic elements are lines, circles and ellipses. The geometric properties of the elements are defined by attributes in their opening tag. **Note**, the elements below are interactive. Click and drag either any of the the blue points around to see how the element is drawn.
+The basic visual elements define shapes and lines. For example, some basic elements are lines, circles and ellipses. The geometric properties of the elements are defined by attributes in their opening tag. **Note**, the elements below are interactive. Click and drag either of the points around to see how the element is drawn.
 
 ### Line Element
 
@@ -105,7 +105,7 @@ The ellipse element draws an ellipse centered at the point `(cx, cy)` with the h
 
 {{<example "SVGRectangleExample">}}
 
-The rectangle element draws a rectangle whose top left corner is defined the point `(x,y)` with the dimensions `width` and `height`. If a negative width or height value is supplied, the element is not rendered. The rectangle's path can be styled with the CSS `stroke` and `stroke-width` attributes which control the color and width. The rectangle's fill can be styled with the CSS `fill` attribute.
+The rectangle element draws a rectangle whose top left corner is defined by the point `(x,y)` with the dimensions `width` and `height`. If a negative width or height value is supplied, the element is not rendered. The rectangle's path can be styled with the CSS `stroke` and `stroke-width` attributes which control the color and width. The rectangle's fill can be styled with the CSS `fill` attribute.
 
 ### Path Element
 
@@ -174,11 +174,11 @@ The close command "completes the loop" and connects the current location of the 
 
 {{<example "SVGPathCloseExample">}}
 
-The path element is core to the SVG specification and complicated. See the [MDN paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) for more information.
+The path element is core to the SVG specification and is complicated. See the [MDN paths](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths) for more information.
 
 ### Tree Structure
 
-SVG Documents form a tree-like structure because the language is based on XML. Each element contains zero or more child elements placed within the opening and closing tag of the element. Take for example the simple SVG below.
+SVG Documents form a tree-like structure because the language is based on XML. Each element contains zero or more child elements placed within the opening and closing tags of the element. Take for example the simple SVG below.
 
 ```html
 <svg width="300" height="200">
@@ -190,9 +190,9 @@ SVG Documents form a tree-like structure because the language is based on XML. E
 </svg>
 ```
 
-The corresponding tree like structure is shown below. There are two important things to know about this structure. 1) It is hierarchical and elements inherit the transformations and and styles applied to their parents. For example, if the group element has a transformation applied to it, its two children will also be transformed. 2) The order in which elements are drawn depends on their order in the document. Elements that are drawn first will appear in the background and elements that are drawn last will appear in the foreground. 
+The corresponding tree-like structure is shown below. There are two important things to know about this structure. 1) It is hierarchical and elements inherit the transformations and styles applied to their parents. For example, if the group element has a transformation applied to it, its two children will also be transformed. 2) The order in which elements are drawn depends on their order in the document. Elements that are drawn first will appear in the background and elements that are drawn last will appear in the foreground. 
 
-{{<image
+{{<svg-inline
 src="images/tree-structure.svg"
 alt="SVG XML Tree Structure"
 class="center"
@@ -200,7 +200,7 @@ class="center"
 
 ## Coordinate System
 
-The origin of the svg coordinate system is at the top-left corner of the image. The positive x-direction is to the right and the positive y-direction is down. In the world of computer graphics it is standard to have the y-axis flipped since elements are positioned relative to the top-left corner of the container. Try clicking and dragging the control point below.
+The origin of the SVG coordinate system is at the top-left corner of the image. The positive x-direction is to the right and the positive y-direction is down. In the world of computer graphics it is standard to have the y-axis flipped since elements are positioned relative to the top-left corner of the container. Try clicking and dragging the control point below.
 
 {{<example "SVGCoordinateSystemExample">}}
 
@@ -210,21 +210,21 @@ The origin of the svg coordinate system is at the top-left corner of the image. 
 <svg viewBox="minX minY width height"></svg>
 {{< /highlight >}}
 
-The view box attribute allows the user to define the internal coordinate system used for drawing. This is useful for two reasons. 1) It allows for the creation of responsive images that leverage the power of SVG. 2) The viewbox can be used to programmatically make sure that all elements are displayed for the user. <!-- TODO: link -->
+The view box attribute allows the user to define the internal coordinate system used for drawing. This is useful for two reasons. 1) It allows for the creation of responsive images that leverage the power of SVG. 2) The view box can be used to programmatically make sure that all elements are displayed for the user. <!-- TODO: link -->
 
 ```
 TODO: viewbox example with preserve aspect ratio dropdown
 ```
 
-**Note**, as demonstrated in the interactive if the view port dimensions disagrees with the viewbox, the default strategy is to ... This can be changed using the `preserveAspectRatio` attribute
+**Note**, as demonstrated in the interactive if the viewport dimensions disagree with the view box, the default strategy is to ... This can be changed using the `preserveAspectRatio` attribute
 
 ## Styling
 
-SVG elements are styled using Cascading Style Sheets or CSS for short. Styling can be applied to individual elements as inline style or using a user-define style sheet. There are many presentation attributes that can be styles, but the two most common are the `fill` and `stroke` of a geometric element.
+SVG elements are styled using Cascading Style Sheets or CSS for short. Styling can be applied to individual elements as inline style or using a user-defined style sheet. Many presentation attributes can be styled, but the two most common are the `fill` and `stroke` of a geometric element.
 
 ### Inline Style
 
-Styling can be applied to individual elements using the style attribute. This is very useful for testing out different styling on an element. In practice, a well constructed stylsheet will be cleaner and reduce the SVGs file size. Shown below are three circles styled using inline style.
+Styling can be applied to individual elements using the style attribute. This is very useful for testing out different styling on an element. In practice, a well-constructed stylesheet will be cleaner and reduce the SVGs file size. Shown below are three circles styled using inline style.
 
 {{<highlight svg>}}
 <svg xmlns="http://www.w3.org/2000/svg">
@@ -242,22 +242,22 @@ This produces the graphic shown below.
   <circle cx="200" cy="75" r="25" style="fill:#68c541;"></circle>
 </svg>
 
-There are many different values that are accepted for color. The colors are shown above using their hexadecimal representation. Color pickers 
+Many different values are accepted for color. The colors are shown above using their hexadecimal representation.
 
-### Styesheets
+### Stylesheets
 
 The alternative to inline styling is stylesheets. Stylesheets can either be defined in the SVG `style` element or as an external stylesheet. Stylesheets contain logic selectors which style elements based on their type, class and other attributes. Selectors have priority and can contain complex logic for selecting specific elements.
 
 ```css
 /* style elements by tag name */
 circle {
-  stroke:#dddddd; /* light grey */
+  stroke:#d0d0d0; /* light grey */
   stroke-width: 4px;
 }
 
 /* style by user interaction */
 circle:hover {
-  stroke:#888888; /* medium grey */
+  stroke:#808080; /* medium grey */
 }
 
 /* style elements by class */
@@ -283,11 +283,11 @@ These style rules applied to the SVG elements above produce the following graphi
 <svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:150px; margin-bottom:1rem" class="border" id="style-example">
 <style>
 #style-example circle {
-  stroke:#dddddd;
+  stroke:#d0d0d0;
   stroke-width: 3px;
 }
 #style-example circle:hover {
-  stroke:#888888;
+  stroke:#808080;
 }
 #style-example .red {
   fill: #de4850;
@@ -313,7 +313,7 @@ See [MDN CSS Selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Sel
 
 ## Typography
 
-There are a number of elements for creating and formatting text within SVG documents. Note, using fonts in SVG can be a bit tricky. Two good strategies are 1) to use web safe fonts which are likely to be on every operating system and 2) to use web fonts such as [google fonts](https://fonts.google.com/). While option 2) has a much wider selection of fonts, if the SVG is embedded using an HTML `img` tag the browser does not allow access to external link sources and so a fall back font is used instead.
+There are a number of elements for creating and formatting text within SVG documents. Note, using fonts in SVG can be a bit tricky. Two good strategies are 1) to use web-safe fonts which are likely to be on every operating system and 2) to use web fonts such as [Google fonts](https://fonts.google.com/). While option 2) has a much wider selection of fonts, if the SVG is embedded using an HTML `img` tag the browser does not allow access to external link sources and so a fallback font is used instead.
 
 ### Text Element
 
@@ -337,7 +337,7 @@ The text element draws text at the point `(x, y)` in the document.
 
 ### Tspan Element
 
-The text span element is useful for changing the position and or the styling of a piece of text within a text element. In the example below, the first word is placed within a tspan element and bolded to emphasize the word. Then, later, a tspan element is positioned relative to the last tspan element.
+The text span element is useful for changing the position and or the styling of a piece of text within a text element. In the example below, the first word is placed within a `tspan` element and bolded to emphasize the word. Then, later, a `tspan` element is positioned relative to the last `tspan` element.
 
 <svg xmlns="http://www.w3.org/2000/svg" style="width:100%; height:150px;" class="border">
   <style>
@@ -368,9 +368,9 @@ The text span element is useful for changing the position and or the styling of 
 
 ### Text Position
 
-The position where the text is drawn within the coordinate system is determined by the [dominant-baseline](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline) and [text-anchor](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor) attributes. The default position is shown in the figure below with a number of options for the two attributes.
+The position where the text is drawn within the coordinate system is determined by the [dominant baseline](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/dominant-baseline) and [text-anchor](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor) attributes. The default position is shown in the figure below with a number of options for the two attributes.
 
-{{<image
+{{<svg-inline
 src="images/text-position.svg"
 alt="SVG Text Position"
 class="center"
@@ -382,7 +382,7 @@ The SVG specification has a lot of elements, and while not all are covered in th
 
 ### Clip Path Element
 
-Clip paths can be applied to elements to show only the part of the graphic contained within the shape of the clip path. The clip path is applied to an element and its children by setting the clip-path attribute to point to a clip path element in the DOM tree. For example, the clip path defined by the child path element creatings a **masking** effect when applied to an image.
+Clip paths can be applied to elements to show only the part of the graphic contained within the shape of the clip path. The clipping is applied to an element and its children by setting the clip-path attribute to point to a clip-path element in the DOM tree. For example, the clip path defined by the child path element creates a **masking****** effect when applied to an image.
 
 {{<highlight svg>}}
 <clipPath id="my-clip-path">
@@ -392,7 +392,7 @@ Clip paths can be applied to elements to show only the part of the graphic conta
 
 {{</highlight>}}
 
-Click and drag the points which control the shape of the clip path.
+Click and drag the points which control the shape of the clip path.<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" fill="none" viewBox="0 0 0 0"><defs><linearGradient id="gradient" gradientTransform="rotate(90)"><stop stop-color="#e66465" offset="0%"></stop><stop stop-color="#9198e5" offset="100%"></stop></linearGradient></defs></svg>
 
 {{<example "SVGClipPathExample" >}}
 
@@ -400,7 +400,7 @@ The clipping path can be applied to many more elements and can be defined using 
 
 ### Defs Element
 
-The defs element contains a graphical "definition" that can be re-used in the document. For example, an arrow can be defined and then attached to path.
+The `defs` element contains a graphical "definition" that can be reused in the document. For example, an arrow can be defined and then attached to a path.
 
 ```xml
 <svg>
@@ -413,7 +413,7 @@ The defs element contains a graphical "definition" that can be re-used in the do
 </svg>
 ```
 
-There are many more advanced elements that are note shown here. See the full list of SVG Elements [documented on MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element).
+There are many more advanced elements that are not shown here. See the full list of SVG Elements [documented on MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element).
 
 ## Web Usage
 
@@ -429,7 +429,7 @@ There are two common strategies for embedding SVG docs on the web: using an `img
 <img src="/path/to/file.svg" width="400" height="300">
 ```
 
-The `img` tag is useful for SVG documents that appear in multiple places and leverages browser caching which can be useful if the image appears on many pages that the user navigates to. Considurations when using the `img` tag are: external stylesheets will not affect the styling of the SVG and Javascript cannot be used to manipulated the document. 
+The `img` tag is useful for SVG documents that appear in multiple places and leverages browser caching which can be useful if the image appears on many pages that the user navigates to. Considerations when using the `img` tag are: external stylesheets will not affect the styling of the SVG and Javascript cannot be used to manipulate the document. 
 
 #### Inline SVG
 
@@ -439,18 +439,18 @@ The `img` tag is useful for SVG documents that appear in multiple places and lev
 </svg>
 ```
 
-The **pros** of embedding an inline SVG document is that it saves the browser a resource request, allows for javascript to interact with the document and allows more flexibility for styling SVG elements. This approach is often used for icons and interactivity.
+The **pros** of embedding an inline SVG document are that it saves the browser a resource request, allows for javascript to interact with the document and allows more flexibility for styling SVG elements. This approach is often used for icons and interactivity.
 
-The **cons** of inlining SVGs is that it can lead to increased `html` size and since the browser is not able to cache the image, subsequent page loads will not be faster than the first page load.
+The **cons** of inlining SVGs are that it can lead to increased `html` size and since the browser is not able to cache the image, subsequent page loads will not be faster than the first-page load. Another downside is that there can by styling conflicts if the inlined SVG both define different selectors in a `style` element.
 
 ## References
 
-The SVG specification is a standard implemented by browsers and applications. The current version of the spec is [SVG 1.1](https://www.w3.org/TR/SVG11/) and the next candidate recomendation is [SVG 2.0](https://www.w3.org/TR/SVG2/). For this reason, the language is interpretted slightly differently between environments and definitely used differently due to its versatility.
+The SVG specification is a standard implemented by browsers and applications. The current version of the spec is [SVG 1.1](https://www.w3.org/TR/SVG11/) and the next candidate recommendation is [SVG 2.0](https://www.w3.org/TR/SVG2/). For this reason, the language is interpreted slightly differently between environments and definitely used differently due to its versatility.
 
 - [SVG 1.1 Specification](https://www.w3.org/TR/SVG11/)
 - [SVG 2.0 Specification](https://www.w3.org/TR/SVG2/)
 
-There are many web resources available. Personally, I recommend [Mozilla Web Docs](https://developer.mozilla.org/en-US/) as the best place to look-up SVG documentation and other web related documentation.
+There are many web resources available. Personally, I recommend [Mozilla Web Docs](https://developer.mozilla.org/en-US/) as the best place to look up SVG documentation and other web-related documentation.
 
 - [MDN - SVG Overview](https://developer.mozilla.org/en-US/docs/Web/SVG)
 - [MDN - SVG Tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
@@ -458,4 +458,4 @@ There are many web resources available. Personally, I recommend [Mozilla Web Doc
 
 ## Source
 
-The source code for this article is available on [Github](https://github.com/kurtbruns/svg-tutorial). If you have constructive feedback please submit an issue or pull request.
+The source code for this article is available on [GitHub](https://github.com/kurtbruns/svg-tutorial). If you have constructive feedback please submit an issue or pull request.

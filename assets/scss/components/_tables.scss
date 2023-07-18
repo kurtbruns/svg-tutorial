@@ -1,39 +1,56 @@
-/**
- * Tables
- */
+/* Tables
+  =============== */
 
 // Table expands to full width of containing element
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    max-width: 100%;
 }
 
 // Extra border underneath header
 thead th {
-  border-bottom: 2px solid $border-color;
+    border-bottom: 2px solid $border-color;
 }
 
 // Extra border above footer
 tfoot th {
-  border-top: 2px solid $border-color;
+    border-top: 2px solid $border-color;
 }
 
 td {
-  border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
 }
 
 th,
 td {
-  text-align: left;
-  padding: 0.5rem;
+    text-align: left;
+    padding: .5rem;
 }
 
 caption {
-  padding: $padding 0;
-  caption-side: bottom;
-  color: $caption;
+    padding: $padding 0;
+    caption-side: bottom;
+    color: $caption;
+}
+
+.compact-table {
+  width: 300px;
+  margin:0 auto 1.5rem auto;
+}
+
+.compact-table th {
+  border: 1px solid $border-color;
+  border-bottom: 2px solid $border-color;
+}
+
+.compact-table td {
+  border: 1px solid $border-color;
+}
+
+.compact-table tbody tr:nth-child(odd) {
+  background-color: $stripes;
 }
 
 .striped-table tbody tr:nth-child(odd) {

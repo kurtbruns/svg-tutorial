@@ -8,9 +8,9 @@ import { ResponsiveArtboard, Text, TSpan, Group } from '@kurtbruns/vector';
 export class MetaSVGSyntaxExample {
 	
 	colors = {
-		'tag':'#404040',
-		'attribute':'#404040',
-		'value':'#404040',
+		'tag':'var(--syntax-tag)',
+		'attribute':'var(--syntax-attribute)',
+		'value':'var(--synatax-string)',
 	}
 
 	colors2 = {

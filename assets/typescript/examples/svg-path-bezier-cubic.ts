@@ -66,17 +66,27 @@ export class SVGPathBezierCubicExample extends SVGExample {
     l3.addDependency(c3);
     l3.addDependency(c4);
 
-    // TODO: this is rather hacky, and probably best replaced by implementing the
-    // tspan element in our SVG wrapper class. Added toFixed function call for
-    // tablet and mobile using non-integer numbers, maybe there is a better way?
-    text.update = function() {
-      let tag = `<tspan style="fill:purple">path</tspan>`;
-      let d = `<tspan style="fill:#ab6f00">d</tspan>`;
-      this.contents = `&lt;${tag} ${d}="M ${c1.x.toFixed(0)} ${c1.y.toFixed(0)} C ${c2.x.toFixed(0)} ${c2.y.toFixed(0)} ${c3.x.toFixed(0)} ${c3.y.toFixed(0)} ${c4.x.toFixed(0)} ${c4.y.toFixed(0)}"&gt`;
-    }
-    text.update();
-    text.addDependency(path);
+    this.xml.tspan('&lt');
+    let tag = this.xml.tspan('path ');
+    let d = this.xml.tspan('d=');
+    d.style.fill = 'var(--syntax-attribute)';
+    this.xml.tspan('&gt;');
+    // let close = this.xml.tspan('&gt;&lt;/ellipse&gt;');
 
+    this.xml.x = 20;
+    this.xml.y = this.maxY - 20;
+    tag.style.fill = 'var(--syntax-tag)';
+
+    let dValue = d.tspan('');
+    dValue.style.fill = 'var(--syntax-string)';
+
+    dValue.addDependency(path);
+    dValue.update = function () {
+      dValue.text = `"${path.d}" `;
+    };
+
+    this.xml.addDependency(path);
+    path.updateDependents();
 
   }
 }

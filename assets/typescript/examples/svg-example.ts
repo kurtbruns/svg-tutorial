@@ -13,10 +13,6 @@ export class SVGExample extends OverflowArtboard {
      */
     constructor(idOrElment:string|HTMLElement) {
 
-        OverflowArtboard.lightStroke = '#f8f8f8';
-        OverflowArtboard.mediumStroke = '#f0f0f0';
-        OverflowArtboard.darkStroke = '#d8d8d8';
-
         super(idOrElment, {
             width:400,
             height:300,
