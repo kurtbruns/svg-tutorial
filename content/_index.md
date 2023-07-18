@@ -251,13 +251,13 @@ The alternative to inline styling is stylesheets. Stylesheets can either be defi
 ```css
 /* style elements by tag name */
 circle {
-  stroke:#d0d0d0; /* light grey */
+  stroke: #d0d0d0; /* light grey */
   stroke-width: 4px;
 }
 
 /* style by user interaction */
 circle:hover {
-  stroke:#808080; /* medium grey */
+  stroke: #808080; /* medium grey */
 }
 
 /* style elements by class */

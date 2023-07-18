@@ -6,6 +6,7 @@
   --background: #202020;
   --background-darker: #181818;
   --background-lighter: #303030;
+
   --font-color: #e0e0e0;
   --medium-color: #a0a0a0;
   --contrast-color: #bebebe;
@@ -43,6 +44,10 @@
   --background: #ffffff;
   --background-darker: hsl(0, 0%, 95%); // darker
   --background-lighter: hsl(0, 0%, 95%); // darker
+
+  --foreground: #d0d0d0; // better variable name?
+
+
   --font-color: #404040;
   --medium-color: #808080;
   --contrast-color: #404040;
