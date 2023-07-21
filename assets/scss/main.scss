@@ -74,7 +74,13 @@
 
 
 section.copyright {
-  margin-bottom: 50rem;
+  margin-bottom: 10rem;
+}
+
+@include small-breakpoint {
+  section.copyright {
+    margin-bottom: 50rem;
+  }
 }
 
 img.center {

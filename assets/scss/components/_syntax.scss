@@ -112,6 +112,10 @@ pre.block {
   border: 1px solid var(--border-color);
 }
 
+pre {
+  overflow: auto;
+}
+
 /* Background */ .chroma { color: var(--syntax-foreground); background-color: var(--syntax-background) }
 /* Other */ .chroma .x {  }
 /* Error */ .chroma .err { color: var(--syntax-error); background-color: var(--syntax-background) }
