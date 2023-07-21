@@ -1184,6 +1184,9 @@ pre.block {
   font-size: 15px;
   border: 1px solid var(--border-color); }
 
+pre {
+  overflow: auto; }
+
 /* Background */
 .chroma {
   color: var(--syntax-foreground);
@@ -1507,7 +1510,11 @@ pre.block {
   background-color: #404040; }
 
 section.copyright {
-  margin-bottom: 50rem; }
+  margin-bottom: 10rem; }
+
+@media (min-width: 608px) {
+  section.copyright {
+    margin-bottom: 50rem; } }
 
 img.center {
   display: block;
